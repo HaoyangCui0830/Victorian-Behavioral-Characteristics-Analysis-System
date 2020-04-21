@@ -1,4 +1,4 @@
-[
+export const mapStyle=[
     {
         "elementType": "geometry",
         "stylers": [
@@ -132,6 +132,15 @@
     },
     {
         "featureType": "poi.park",
+        "elementType": "labels.text",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.park",
         "elementType": "labels.text.fill",
         "stylers": [
             {
@@ -145,15 +154,6 @@
         "stylers": [
             {
                 "color": "#304a7d"
-            }
-        ]
-    },
-    {
-        "featureType": "road",
-        "elementType": "labels.icon",
-        "stylers": [
-            {
-                "visibility": "off"
             }
         ]
     },
@@ -177,7 +177,6 @@
     },
     {
         "featureType": "road.arterial",
-        "elementType": "labels",
         "stylers": [
             {
                 "visibility": "off"
@@ -240,14 +239,6 @@
     {
         "featureType": "road.local",
         "elementType": "labels",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "transit",
         "stylers": [
             {
                 "visibility": "off"

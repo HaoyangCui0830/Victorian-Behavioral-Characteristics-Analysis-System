@@ -1,15 +1,23 @@
-import React from "react";
-import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
+import React, {Component} from "react";
+import { withScriptjs, withGoogleMap, GoogleMap, Polygon } from "react-google-maps"
+import {mapStyle} from "./GoogleMapStyles";
 
-const styles = require("./GoogleMapStyles.json")
-const MyMapComponent = withScriptjs(withGoogleMap((props) =>
-    <GoogleMap
-        defaultZoom={11}
-        defaultCenter={{ lat: -37.72116336626568, lng: 144.94041496744163 }}
-        defaultOptions={{style:styles}}
-    >
-        {props.isMarkerShown && <Marker position={{ lat: -37.72116336626568, lng:144.94041496744163 }} />}
-    </GoogleMap>
-))
+// class MapComponent extends Component{
+//     constructor(props) {
+//         super(props);
+//     }
+//
+//     render() {
+//          const Example = withScriptjs(withGoogleMap((props =>
+//             <GoogleMap defaultZoom={11}
+//             defaultCenter={{ lat: -37.72116336626568, lng: 144.94041496744163 }}
+//                        defaultOptions={{ styles: mapStyle }}
+//             >
+//             </GoogleMap>
+//         )))
+//         return Example;
+//     }
+// }
 
-export default MyMapComponent;
+
+// export default MapComponent;
