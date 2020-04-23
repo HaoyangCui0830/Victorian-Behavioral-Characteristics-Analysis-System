@@ -71,7 +71,9 @@ import React, {Component} from 'react';
 import {mapStyle} from "./map/GoogleMapStyles";
 
 let map;
-let GeoUrl = "https://data.gov.au/geoserver/vic-suburb-locality-boundaries-psma-administrative-boundaries/wfs?request=GetFeature&typeName=ckan_af33dd8c_0534_4e18_9245_fc64440f742e&outputFormat=json"
+let GeoUrl = "https://api.maptiler.com/data/6b57b783-6867-4e5a-9aa8-a3d92967edbc/features.json?key=SRHa8sarYsHKRuSWfalI"
+// let GeoUrl = "https://data.gov.au/geoserver/vic-suburb-locality-boundaries-psma-administrative-boundaries/wfs?request=GetFeature&typeName=ckan_af33dd8c_0534_4e18_9245_fc64440f742e&outputFormat=json"
+
 class Map extends Component {
 
     constructor(props) {
