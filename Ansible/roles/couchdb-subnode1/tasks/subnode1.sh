@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "== Set variables =="
-export node=172.26.133.140
+export node=172.26.131.97
 export user=admin
 export password=123456
 
