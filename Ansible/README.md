@@ -1,17 +1,30 @@
-# CCCProject2  
+# Ansible
 
-to fully deploy couchDB cluster, following these steps
-1. ./create_VMs.sh
+# how to run
 
-create volumes
+## openstack key
 
-set security-group
+```
+MTFjM2E4MWE3Mjk3NGVi
+```
 
-create instances
+## step 1 create VMs
+```
+./create_VMs.sh
+```
+### create volumes
+### set security-group
+### create instances
 
-2. ssh into each instance, run: sudo mv /var/lib/dpkg/info/install-info.postinst /var/lib/dpkg/info/install-info.postinst.bad
-	(this should be put inside ansible later)
+## step 2 set VMs environment
+```
+./set_environment.sh
+```
+### set-proxy
+### mount-volumes
+### install-docker
 
-3. sh set_environment.sh
-
-4. sh couchdb_cluster.sh
+## step 3 cluster CouchDB
+```
+./couchdb_cluster.sh
+```
