@@ -1,9 +1,12 @@
-package com.ccc.backend.db;
+package com.ccc.backend.dao.impl;
 
 import com.ccc.backend.beans.Sofa;
+import com.ccc.backend.dao.CouchdbCRUD;
 import org.ektorp.CouchDbConnector;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Component
 public class CouchdbCRUDImpl implements CouchdbCRUD {
@@ -17,8 +20,13 @@ public class CouchdbCRUDImpl implements CouchdbCRUD {
      */
     @Override
     public String newSofa(Sofa sofa) throws Exception {
-        connector.create(sofa.getId(), sofa);
+        connector.create(sofa);
         return sofa.getId();
+    }
+
+    @Override
+    public List<Sofa> getAll() {
+        return null;
     }
 
 }

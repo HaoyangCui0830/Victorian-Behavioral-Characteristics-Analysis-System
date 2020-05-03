@@ -1,6 +1,8 @@
-package com.ccc.backend.db;
+package com.ccc.backend.dao;
 
 import com.ccc.backend.beans.Sofa;
+
+import java.util.List;
 
 public interface CouchdbCRUD {
 
@@ -12,6 +14,6 @@ public interface CouchdbCRUD {
      * @Exception Exception
      */
     String newSofa(Sofa sofa)throws Exception;
-
+    List<Sofa> getAll();
 
 }
