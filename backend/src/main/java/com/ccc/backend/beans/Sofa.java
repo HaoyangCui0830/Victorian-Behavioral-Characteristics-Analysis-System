@@ -4,10 +4,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Sofa {
 
-    @JsonProperty(value = "_id")
     private String id;
 
-    @JsonProperty(value = "_rev")
     private String revision;
 
     private String color;
@@ -22,18 +20,22 @@ public class Sofa {
         this.type = type;
     }
 
+    @JsonProperty(value = "_id")
     public String getId() {
         return id;
     }
 
+    @JsonProperty(value = "_id")
     public void setId(String id) {
         this.id = id;
     }
 
+    @JsonProperty(value = "_rev")
     public String getRevision() {
         return revision;
     }
 
+    @JsonProperty(value = "_rev")
     public void setRevision(String revision) {
         this.revision = revision;
     }
@@ -44,5 +46,15 @@ public class Sofa {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    @Override
+    public String toString() {
+        return "Sofa{" +
+                "id='" + id + '\'' +
+                ", revision='" + revision + '\'' +
+                ", color='" + color + '\'' +
+                ", type='" + type + '\'' +
+                '}';
     }
 }
