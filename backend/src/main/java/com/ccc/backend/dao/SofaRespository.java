@@ -1,6 +1,6 @@
 package com.ccc.backend.dao;
 
-import com.ccc.backend.beans.Sofa;
+import com.ccc.backend.pojo.Sofa;
 import com.ccc.backend.db.CouchDBConfig;
 import org.ektorp.CouchDbConnector;
 import org.ektorp.support.CouchDbRepositorySupport;

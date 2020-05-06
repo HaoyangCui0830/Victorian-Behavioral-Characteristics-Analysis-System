@@ -1,6 +1,6 @@
 package com.ccc.backend.dao;
 
-import com.ccc.backend.beans.Sofa;
+import com.ccc.backend.pojo.Sofa;
 
 import java.util.List;
 

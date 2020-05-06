@@ -1,8 +1,8 @@
 package com.ccc.backend.controller;
 
-import com.ccc.backend.beans.Sentiment;
-import com.ccc.backend.beans.Sofa;
-import com.ccc.backend.beans.Suburb;
+import com.ccc.backend.pojo.Sentiment;
+import com.ccc.backend.pojo.Sofa;
+import com.ccc.backend.pojo.Suburb;
 import com.ccc.backend.dao.CouchdbCRUD;
 import com.ccc.backend.dao.SofaRespository;
 import org.springframework.beans.factory.annotation.Autowired;
