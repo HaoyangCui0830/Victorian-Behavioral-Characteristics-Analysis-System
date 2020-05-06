@@ -1,4 +1,4 @@
-package com.ccc.backend.beans;
+package com.ccc.backend.pojo;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

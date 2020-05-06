@@ -1,6 +1,6 @@
 package com.ccc.backend.dao.impl;
 
-import com.ccc.backend.beans.Sofa;
+import com.ccc.backend.pojo.Sofa;
 import com.ccc.backend.dao.CouchdbCRUD;
 import org.ektorp.CouchDbConnector;
 import org.springframework.beans.factory.annotation.Autowired;
