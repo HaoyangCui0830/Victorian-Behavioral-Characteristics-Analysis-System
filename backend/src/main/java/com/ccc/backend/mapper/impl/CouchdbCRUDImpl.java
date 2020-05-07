@@ -1,7 +1,7 @@
-package com.ccc.backend.dao.impl;
+package com.ccc.backend.mapper.impl;
 
 import com.ccc.backend.pojo.Sofa;
-import com.ccc.backend.dao.CouchdbCRUD;
+import com.ccc.backend.mapper.CouchdbCRUD;
 import org.ektorp.CouchDbConnector;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

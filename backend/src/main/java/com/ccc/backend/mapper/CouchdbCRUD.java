@@ -1,4 +1,4 @@
-package com.ccc.backend.dao;
+package com.ccc.backend.mapper;
 
 import com.ccc.backend.pojo.Sofa;
 
