@@ -1,7 +1,6 @@
 package com.ccc.backend.controller;
 
-import com.ccc.backend.dao.FollowerRespository;
-import com.ccc.backend.pojo.Follower;
+import com.ccc.backend.mapper.FollowerRespository;
 import com.ccc.backend.pojo.Sentiment;
 import com.fasterxml.jackson.databind.JsonNode;
 import org.ektorp.CouchDbConnector;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 @RestController

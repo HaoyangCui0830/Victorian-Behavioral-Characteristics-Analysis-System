@@ -1,7 +1,6 @@
 package com.ccc.backend.controller;
 
-import com.ccc.backend.dao.FollowerRespository;
-import com.ccc.backend.pojo.Follower;
+import com.ccc.backend.mapper.FollowerRespository;
 import com.ccc.backend.pojo.Time;
 import org.ektorp.CouchDbConnector;
 import org.ektorp.ViewQuery;
@@ -12,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 @RestController
