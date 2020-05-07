@@ -1,5 +1,6 @@
 package com.ccc.backend.controller;
 
+import com.ccc.backend.mapper.FollowerMapper;
 import com.ccc.backend.pojo.Follower;
 import org.ektorp.CouchDbConnector;
 import org.ektorp.ViewQuery;
@@ -17,41 +18,10 @@ import java.util.List;
 public class FollowerController {
 
     @Autowired
-    private CouchDbConnector connector;
+    private FollowerMapper followerMapper;
 
     @GetMapping(value = "/follower")
     public List<Follower> getall(){
-        List<Follower> reslut = new ArrayList<>();
-        ViewQuery query = new ViewQuery()
-                .designDocId("_design/follower")
-                .viewName("_view").viewName("new-view");
-
-        ViewResult result = connector.queryView(query);
-        for (ViewResult.Row row : result) {
-            Follower follower = new Follower();
-            follower.setId(row.getId());
-            follower.setSuburb(row.getKey());
-            follower.setValue(row.getValueAsInt());
-
-            reslut.add(follower);
-//            System.out.println(row.getId());
-//            System.out.println(row.getSuburb());
-//            System.out.println(row.getValue());
-        }
-
-//        InputStream data = connector.queryForStream(query);
-//
-//        BufferedReader br = new BufferedReader(new InputStreamReader(data));
-//        String s;
-//        try{
-//            while((s=br.readLine()).length()!=0){
-//                System.out.println(s);
-//            }
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-
-
-        return reslut;
+        return followerMapper.getAll();
     }
 }
