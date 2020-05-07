@@ -4,8 +4,6 @@
   os_server:
     name: '{{ item.name }}'
     image: '{{ instance_image }}'
-    # public network
-    network: '{{ item.network }}'
     key_name: '{{ instance_key_name }}'
     flavor: '{{ instance_flavor }}'
     availability_zone: '{{ availability_zone }}'
@@ -23,10 +21,19 @@
   loop: '{{ os_instance.results }}'
   when: item.openstack is defined
 
-- name: set ip addresses to /inventory/inventory.ini
-  lineinfile:
-    line: '{{ item.openstack.public_v4 }}'
-    insertafter: '\[{{ item.openstack.name }}\]'
-    dest: "{{project_directory}}/Ansible/inventory/inventory.ini"
+- name: Wait for connection
+  wait_for:
+    host: "{{ item.openstack.public_v4 }}"
+    port: 22
+    timeout: 120
+    search_regex: OpenSSH
+  loop: '{{ os_instance.results }}'
+  when: item.openstack is defined
+
+# Add hosts to Ansible in-memory inventory
+- name: Add host
+  add_host:
+    name: '{{ item.openstack.public_v4 }}'
+    groups: COMP90024
   loop: '{{ os_instance.results }}'
   when: item.openstack is defined

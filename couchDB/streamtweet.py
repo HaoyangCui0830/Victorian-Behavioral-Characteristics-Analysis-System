@@ -33,9 +33,10 @@ auth.set_access_token("974163114433306624-fSrCQPL7HCM33RxE76V2dvFmsuQ1v5n", "i2e
 
 api = tweepy.API(auth)
 
-server = pycouchdb.Server("http://admin:1q2w3e4r@localhost:5984/")
+server = pycouchdb.Server("http://admin:123456@localhost:5984/")
 #print(server.info())
-db = server.database("ccctest")
+database = server.create('mytest')
+db = server.database("mytest")
 time.sleep(5)
 
 class MyStreamListener(tweepy.StreamListener):

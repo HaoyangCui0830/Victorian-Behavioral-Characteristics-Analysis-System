@@ -1,0 +1,24 @@
+---
+volumes:
+  - device: /dev/vdb
+    mountpoint: /var/lib/docker
+  # - device: /dev/vdc
+  #   mountpoint: /data
+
+wp_dir: wordpress
+
+# Wordpress / MySQL
+database_name: wordpress
+database_user: wordpress
+database_password: wordpress
+mysql_root_password: "P@ssw0rd"
+
+proxy_address: http://wwwproxy.unimelb.edu.au:8000
+
+couchdb_version: latest
+couchdb_config_path: /home/ubuntu/couchdb/etc
+couchdb_share: 4
+couchdb_replica: 3
+cluster_cookie: 'hello'
+cluster_communication_port_min: 9100
+cluster_communication_port_max: 9102

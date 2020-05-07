@@ -8,17 +8,17 @@ availability_zone: melbourne-qh2-uom
 # Volume
 volumes:
   - vol_name: volumes-01
-    vol_size: 10
+    vol_size: 20
   - vol_name: volumes-02
-    vol_size: 10
+    vol_size: 20
   - vol_name: volumes-03
-    vol_size: 10
+    vol_size: 20
   - vol_name: volumes-04
-    vol_size: 10
+    vol_size: 20
 
 # Instance
 instances:
-  - name: Instance-01
+  - name: instance1
     volumes: ['volumes-01']
     # # #      Network    # # # #
     # Name              Public  #
@@ -27,13 +27,13 @@ instances:
     # qh2-uom           YES     #
     # # # # # # # # # # # # # # #
     network: qh2-uom-internal
-  - name: Instance-02
+  - name: instance2
     volumes: ['volumes-02']
     network: qh2-uom-internal
-  - name: Instance-03
+  - name: instance3
     volumes: ['volumes-03']
     network: qh2-uom-internal
-  - name: Instance-04
+  - name: instance4
     volumes: ['volumes-04']
     network: qh2-uom-internal
 
@@ -59,4 +59,16 @@ security_groups:
     protocol: tcp
     port_range_min: 80
     port_range_max: 80
+    remote_ip_prefix: 0.0.0.0/0
+  - name: test-couchDB
+    description: "security group for couchdb cluster setup"
+    protocol: tcp
+    port_range_min: 5984
+    port_range_max: 5984
+    remote_ip_prefix: 0.0.0.0/0
+  - name: frontend
+    description: "security group for frontend react"
+    protocol: tcp
+    port_range_min: 3000
+    port_range_max: 3000
     remote_ip_prefix: 0.0.0.0/0
