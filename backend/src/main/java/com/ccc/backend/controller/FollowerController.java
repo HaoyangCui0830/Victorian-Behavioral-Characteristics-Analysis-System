@@ -1,6 +1,5 @@
 package com.ccc.backend.controller;
 
-import com.ccc.backend.mapper.FollowerRespository;
 import com.ccc.backend.pojo.Follower;
 import org.ektorp.CouchDbConnector;
 import org.ektorp.ViewQuery;
@@ -16,8 +15,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/api")
 public class FollowerController {
-    @Autowired
-    FollowerRespository followerRespository;
 
     @Autowired
     private CouchDbConnector connector;
