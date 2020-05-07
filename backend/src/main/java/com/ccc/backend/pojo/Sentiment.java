@@ -3,7 +3,7 @@ package com.ccc.backend.pojo;
 
 public class Sentiment {
     private String suburb;
-    private Float polarity;
+    private Polarity polarity;
 
     public String getSuburb() {
         return suburb;
@@ -13,11 +13,10 @@ public class Sentiment {
         this.suburb = suburb;
     }
 
-    public Float getPolarity() {
+    public Polarity getPolarity() {
         return polarity;
     }
-
-    public void setPolarity(Float polarity) {
+    public void setPolarity(Polarity polarity) {
         this.polarity = polarity;
     }
 }
