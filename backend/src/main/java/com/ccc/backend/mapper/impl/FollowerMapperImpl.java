@@ -21,7 +21,7 @@ public class FollowerMapperImpl implements FollowerMapper {
     public List<Follower> getAll() {
         List<Follower> reslut = new ArrayList<>();
         ViewQuery query = new ViewQuery()
-                .designDocId("_design/follower")
+                .designDocId("_design/followers")
                 .viewName("_view").viewName("new-view").groupLevel(1);
 
         ViewResult result = connector.queryView(query);
