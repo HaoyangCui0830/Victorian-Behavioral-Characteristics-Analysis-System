@@ -23,7 +23,7 @@ public class SentimentMapperImpl implements SentimentMapper {
         List<Sentiment> reslut = new ArrayList<>();
         ViewQuery query = new ViewQuery()
                 .designDocId("_design/suburb_sentiment")
-                .viewName("_view").viewName("new-view");
+                .viewName("_view").viewName("new-view").groupLevel(1);
 
         ViewResult result = connector.queryView(query);
         for (ViewResult.Row row : result) {
