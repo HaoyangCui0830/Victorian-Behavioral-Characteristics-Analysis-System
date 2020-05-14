@@ -60,15 +60,45 @@ security_groups:
     port_range_min: 80
     port_range_max: 80
     remote_ip_prefix: 0.0.0.0/0
-  - name: test-couchDB
+  - name: couchDB
     description: "security group for couchdb cluster setup"
     protocol: tcp
     port_range_min: 5984
-    port_range_max: 5984
+    port_range_max: 5988
+    remote_ip_prefix: 0.0.0.0/0
+  - name: couchDBCluster1
+    description: "security group for couchdb cluster setup"
+    protocol: tcp
+    port_range_min: 4369
+    port_range_max: 4369
+    remote_ip_prefix: 0.0.0.0/0    
+  - name: couchDBCluster2
+    description: "security group for couchdb cluster setup"
+    protocol: tcp
+    port_range_min: 9099
+    port_range_max: 9201
+    remote_ip_prefix: 0.0.0.0/0   
+  - name: swarm
+    description: "security group for docker swarm"
+    protocol: tcp
+    port_range_min: 2377
+    port_range_max: 2377
     remote_ip_prefix: 0.0.0.0/0
   - name: frontend
     description: "security group for frontend react"
     protocol: tcp
     port_range_min: 3000
     port_range_max: 3000
+    remote_ip_prefix: 0.0.0.0/0
+  - name: netdata
+    description: "visualization"
+    protocol: tcp
+    port_range_min: 19999
+    port_range_max: 19999
+    remote_ip_prefix: 0.0.0.0/0
+  - name: dockerVisualization
+    description: "dockerVisualization"
+    protocol: tcp
+    port_range_min: 9000
+    port_range_max: 9000
     remote_ip_prefix: 0.0.0.0/0
