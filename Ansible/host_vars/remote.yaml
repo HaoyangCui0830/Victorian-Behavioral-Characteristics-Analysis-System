@@ -6,6 +6,8 @@ volumes:
   #   mountpoint: /data
 
 proxy_address: http://wwwproxy.unimelb.edu.au:8000
+https_proxy_address: http://wwwproxy.unimelb.edu.au:8000
+no_proxy: localhost,127.0.0.1,localaddress,172.16.0.0/12,.melbourne.rc.nectar.org.au,.storage.unimelb.edu.au,.cloud.unimelb.edu.au
 
 couchdb_version: latest
 couchdb_config_path: /home/ubuntu/couchdb/etc
