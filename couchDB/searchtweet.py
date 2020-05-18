@@ -45,13 +45,13 @@ api = tweepy.API(auth)
 # public_tweets = api.home_timeline()
 # for tweet in public_tweets:
 #     print(tweet.text)
-server = pycouchdb.Server("http://admin:1q2w3e4r@localhost:5984/")
+server = pycouchdb.Server("http://admin:password@localhost:5984/")
 #print(server.info())
 try:
-    db = server.create('ccctest')
+    db = server.create('twitter')
 except Exception as e:
-    db = server.database("ccctest")
-db = server.database("ccctest")
+    db = server.database("twitter")
+db = server.database("twitter")
 time.sleep(5)
 # print(db)
 result = api.search(geocode = "-37.999250,144.997395,20km",count=10, result_type = 'mixed')

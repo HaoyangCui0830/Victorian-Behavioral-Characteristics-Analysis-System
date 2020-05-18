@@ -18,7 +18,7 @@ module.exports = function (grunt) {
       }
     });
 
-  grunt.config.set(`couch-push.twitter.files.http://172\\.26\\.134\\.21:5984/${process.env.dbname}`, "/tmp/twitter.json");
+  grunt.config.set(`couch-push.twitter.files.http://172\\.26\\.133\\.201:5984/${process.env.dbname}`, "/tmp/twitter.json");
 console.log(JSON.stringify(grunt.config.get()));
   grunt.loadNpmTasks("grunt-couch");
 };
