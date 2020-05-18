@@ -4,6 +4,7 @@ public class PosNegNue {
     private Integer pos;
     private Integer neg;
     private Integer neu;
+    private Integer total;
 
     public Integer getPos() {
         return pos;
@@ -27,5 +28,13 @@ public class PosNegNue {
 
     public void setNeu(Integer neu) {
         this.neu = neu;
+    }
+
+    public Integer getTotal() {
+        return total;
+    }
+
+    public void setTotal(Integer total) {
+        this.total = total;
     }
 }
