@@ -45,10 +45,10 @@ api = tweepy.API(auth)
 server = pycouchdb.Server("http://admin:1q2w3e4r@localhost:5984/")
 #print(server.info())
 try:
-    db = server.create('ccctest')
+    db = server.create('twitter')
 except Exception as e:
-    db = server.database("ccctest")
-db = server.database("ccctest")
+    db = server.database("twitter")
+db = server.database("twitter")
 time.sleep(5)
 # try:
 #     database = server.create('mytest')
