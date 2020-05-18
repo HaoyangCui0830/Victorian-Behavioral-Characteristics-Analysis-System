@@ -1,15 +1,14 @@
 import React,{Component} from "react";
 import Header from "./HeaderComponent";
-import Home from "./HomeComponent";
+import Home from "./HomeContainer";
 import Footer from "./FooterComponent";
-import Map from "./MapComponent"
+import Map from "./MapContainer"
 import {Route, Redirect,Switch} from "react-router-dom"
 
 class Main extends Component{
     constructor(props) {
         super(props);
         this.state={
-
         }
     }
     render() {
