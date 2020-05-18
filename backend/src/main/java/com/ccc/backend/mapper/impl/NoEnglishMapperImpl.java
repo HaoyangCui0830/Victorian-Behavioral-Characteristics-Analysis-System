@@ -20,8 +20,8 @@ public class NoEnglishMapperImpl implements NoEnglishMapper {
     public List<NoEnglish> getAll() {
         List<NoEnglish> reslut = new ArrayList<>();
         ViewQuery query = new ViewQuery()
-                .designDocId("_design/non_english")
-                .viewName("_view").viewName("new-view").groupLevel(1);
+                .designDocId("_design/twitter")
+                .viewName("_view").viewName("nonEnglish").groupLevel(1);
 
         ViewResult result = connector.queryView(query);
         for (ViewResult.Row row : result) {

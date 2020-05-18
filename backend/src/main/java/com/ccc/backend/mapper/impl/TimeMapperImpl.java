@@ -20,8 +20,8 @@ public class TimeMapperImpl implements TimeMapper {
     public List<Time> getAll() {
         List<Time> reslut = new ArrayList<>();
         ViewQuery query = new ViewQuery()
-                .designDocId("_design/time")
-                .viewName("_view").viewName("new-view").groupLevel(1);
+                .designDocId("_design/twitter")
+                .viewName("_view").viewName("time").groupLevel(1);
 
         ViewResult result = connector.queryView(query);
         for (ViewResult.Row row : result) {
