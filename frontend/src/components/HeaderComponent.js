@@ -1,12 +1,15 @@
 import React, {Component} from "react";
 import {Navbar, NavbarBrand, Nav, NavItem, Collapse, NavbarToggler} from "reactstrap"
 import {NavLink} from "react-router-dom";
+import {Dropdown, DropdownToggle, DropdownMenu, DropdownItem} from 'reactstrap';
+import withContext from "../WithContext";
 
 class Header extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isNavOpen:false,
+            isNavOpen: false,
+            idDropdownOpen: false,
         }
     }
 
@@ -14,7 +17,15 @@ class Header extends Component {
         this.setState({isNavOpen: !this.state.isNavOpen});
     }
 
+    toggleDropdown = () => {
+        this.setState({idDropdownOpen: !this.state.idDropdownOpen})
+    }
+
     render() {
+        const {isNavOpen, idDropdownOpen} = this.state;
+        const {data, actions} = this.props;
+        const {selectedSource} = data;
+        const {onSelect}=actions;
         return (
             <Navbar dark expand="md">
                 <div className="container">
@@ -22,25 +33,36 @@ class Header extends Component {
                         <span>The Melbourne Project</span>
                     </NavbarBrand>
                     <NavbarToggler onClick={() => this.toggleNav()}/>
-                    <Collapse isOpen={this.state.isNavOpen} navbar>
+                    <Collapse isOpen={isNavOpen} navbar>
                         <Nav navbar className="float-right">
                             <NavItem>
                                 <NavLink className="nav-link" to="/home">
-                                    <span className="fa fa-info fa-lg"></span> Home
+                                    <span className="fa fa-info fa-lg"/> Home
                                 </NavLink>
                             </NavItem>
                             <NavItem>
                                 <NavLink className="nav-link" to="/map">
-                                    <span className="fa fa-home fa-lg"></span> Map
+                                    <span className="fa fa-home fa-lg"/> Map
                                 </NavLink>
                             </NavItem>
                         </Nav>
-
                     </Collapse>
+                    <Dropdown isOpen={idDropdownOpen} toggle={this.toggleDropdown}>
+                        <DropdownToggle caret>
+                            {selectedSource || "Data Source"}
+                        </DropdownToggle>
+                        <DropdownMenu right>
+                            <DropdownItem header>Aurin</DropdownItem>
+                            <DropdownItem onClick={onSelect}> Aurin 1</DropdownItem>
+                            <DropdownItem divider/>
+                            <DropdownItem header>Twitter</DropdownItem>
+                            <DropdownItem onClick={onSelect}> Twitter 1</DropdownItem>
+                        </DropdownMenu>
+                    </Dropdown>
                 </div>
             </Navbar>
         )
     }
 }
 
-export default Header;
+export default withContext(Header);

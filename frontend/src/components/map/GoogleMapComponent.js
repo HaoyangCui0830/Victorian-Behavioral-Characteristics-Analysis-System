@@ -4,6 +4,7 @@ import SimpleBarChart from "../charts/BarChart";
 import ReactDOM from "react-dom"
 import SimplePieChart from "../charts/PieChart";
 import {isNumber} from "recharts/lib/util/DataUtils";
+import {GEO} from "../../TestData/geo.js";
 
 let map
 let GeoUrl = "https://raw.githubusercontent.com/cn-wx/COMP90024-TrackHub/master/backend/backend/common/melb_geo.json"
@@ -36,7 +37,7 @@ export default class GoogleMapComponent extends Component {
         });
 
         let infowindow = new window.google.maps.InfoWindow();
-        map.data.loadGeoJson(GeoUrl)
+        map.data.addGeoJson(GEO)
         map.data.setStyle((feature) => {
             return {
                 strokeColor: '#FFAE3B',
