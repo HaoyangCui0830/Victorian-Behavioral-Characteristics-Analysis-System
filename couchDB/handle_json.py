@@ -43,9 +43,9 @@ auth.set_access_token("974163114433306624-fSrCQPL7HCM33RxE76V2dvFmsuQ1v5n", "i2e
 
 api = tweepy.API(auth)
 
-server = pycouchdb.Server("http://admin:1q2w3e4r@127.0.0.1:5984/")
+server = pycouchdb.Server("http://admin:123456@172.26.133.110:5984/")
 #print(server.info())
-db = server.database("ccctest1")
+db = server.database("twitter")
 time.sleep(5)
 # try:
 #     database = server.create('mytest')
