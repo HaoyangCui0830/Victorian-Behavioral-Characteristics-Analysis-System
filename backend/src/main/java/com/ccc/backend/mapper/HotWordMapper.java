@@ -1,6 +1,7 @@
 package com.ccc.backend.mapper;
 
 import com.ccc.backend.pojo.HotWord;
+import com.ccc.backend.pojo.HotWordSuburb;
 
 import java.util.List;
 
@@ -10,4 +11,5 @@ import java.util.List;
  */
 public interface HotWordMapper {
     public List<HotWord> getAll();
+    public List<HotWordSuburb> getBySuburb();
 }
