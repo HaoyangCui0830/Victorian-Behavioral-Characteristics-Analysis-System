@@ -7,19 +7,19 @@ from shapely.geometry import Point
 from shapely.geometry.polygon import Polygon
 
 
-boundary = json.load(open('features.json'))
-suburbs = [item['properties']['vic_loca_2'] for item in boundary['features']]
+boundary = json.load(open('geo.json'))
+suburbs = [item['properties']['name'] for item in boundary['features']]
 
 
 def find_suburb(coordinate):
 	for item in boundary['features']:
 		if item['geometry']['type'] == 'Polygon':
 			if Polygon(item['geometry']['coordinates'][0]).contains(Point(coordinate)):
-				return item['properties']['vic_loca_2']
+				return item['properties']['name']
 		elif item['geometry']['type']=='MultiPolygon':
 			for area in item['geometry']['coordinates']:
 				if Polygon(area[0]).contains(Point(coordinate)):
-					return item['properties']['vic_loca_2']
+					return item['properties']['name']
 	return "None"
 
 
@@ -45,16 +45,16 @@ api = tweepy.API(auth)
 # public_tweets = api.home_timeline()
 # for tweet in public_tweets:
 #     print(tweet.text)
-server = pycouchdb.Server("http://admin:password@localhost:5984/")
+server = pycouchdb.Server("http://admin:1q2w3e4r@localhost:5984/")
 #print(server.info())
-try:
-    db = server.create('twitter')
-except Exception as e:
-    db = server.database("twitter")
-db = server.database("twitter")
+# try:
+#     db = server.create('ccctest')
+# except Exception as e:
+#     db = server.database("ccctest")
+db = server.database("ccctest1")
 time.sleep(5)
 # print(db)
-result = api.search(geocode = "-37.999250,144.997395,20km",count=10, result_type = 'mixed')
+result = api.search(geocode = "-37.999250,144.997395,20km",count=100, result_type = 'mixed')
 #print(result)
 for item in result:
 	data = item._json

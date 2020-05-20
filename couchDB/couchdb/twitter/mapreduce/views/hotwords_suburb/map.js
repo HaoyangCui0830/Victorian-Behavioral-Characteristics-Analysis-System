@@ -9,7 +9,7 @@ function (doc) {
     if(doc.suburb!=null && doc.suburb!="None"){
       doc.entities.hashtags.forEach(function (word) {
         if(p=="2020"){
-        emit([word.text, n, m, doc.suburb], 1);
+        emit([word.text, doc.suburb, n, m], 1);
         }
       });
     }
