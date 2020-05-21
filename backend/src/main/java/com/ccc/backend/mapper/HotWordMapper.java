@@ -4,6 +4,7 @@ import com.ccc.backend.pojo.HotWord;
 import com.ccc.backend.pojo.HotWordSuburb;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @description: TODO
@@ -11,5 +12,5 @@ import java.util.List;
  */
 public interface HotWordMapper {
     public List<HotWord> getAll();
-    public List<HotWordSuburb> getBySuburb();
+    public Map<String, Integer> getSuburbByHotWord(String hotWord);
 }

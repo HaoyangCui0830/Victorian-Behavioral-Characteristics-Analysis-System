@@ -6,9 +6,11 @@ import com.ccc.backend.pojo.HotWordSuburb;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @description: TODO
@@ -26,7 +28,8 @@ public class HotWordController {
     }
 
     @GetMapping(value = "/hotword/suburb")
-    public List<HotWordSuburb> getHotWordBySuburb() {
-        return hotWordMapper.getBySuburb();
+    public Map<String, Integer> getHotWordBySuburb(@RequestParam(name = "word",required = true) String word) {
+        System.out.println(word);
+        return hotWordMapper.getSuburbByHotWord(word);
     }
 }
