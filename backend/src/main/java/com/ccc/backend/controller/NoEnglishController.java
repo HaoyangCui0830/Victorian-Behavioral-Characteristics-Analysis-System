@@ -1,10 +1,9 @@
 package com.ccc.backend.controller;
 
+import com.ccc.backend.common.JsonUtils;
+import com.ccc.backend.common.RedisOperator;
 import com.ccc.backend.mapper.NoEnglishMapper;
 import com.ccc.backend.pojo.NoEnglish;
-import org.ektorp.CouchDbConnector;
-import org.ektorp.ViewQuery;
-import org.ektorp.ViewResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,8 +19,19 @@ public class NoEnglishController {
     @Autowired
     private NoEnglishMapper noEnglishMapper;
 
+    @Autowired
+    private RedisOperator redisOperator;
+
     @GetMapping(value = "/no_english")
-    public List<NoEnglish> getall(){
-        return noEnglishMapper.getAll();
+    public List<NoEnglish> getall() {
+        // check redis first, if data in redis, use the data in redis else query couchdb and store into redis
+        String resultRedis = redisOperator.get("noEnglish");
+        if (resultRedis == null || resultRedis.equals("")) {
+            List<NoEnglish> resultCouchdb = noEnglishMapper.getAll();
+            redisOperator.set("noEnglish", JsonUtils.objectToJson(resultCouchdb));
+            return resultCouchdb;
+        } else {
+            return JsonUtils.jsonToList(resultRedis, NoEnglish.class);
+        }
     }
 }

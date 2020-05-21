@@ -1,5 +1,7 @@
 package com.ccc.backend.controller;
 
+import com.ccc.backend.common.JsonUtils;
+import com.ccc.backend.common.RedisOperator;
 import com.ccc.backend.mapper.TimeMapper;
 import com.ccc.backend.pojo.Time;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +18,19 @@ public class TimeController {
     @Autowired
     private TimeMapper timeMapper;
 
+    @Autowired
+    private RedisOperator redisOperator;
+
     @GetMapping(value = "/time")
-    public List<Time> getall(){
-        return timeMapper.getAll();
+    public List<Time> getall() {
+        // check redis first, if data in redis, use the data in redis else query couchdb and store into redis
+        String resultRedis = redisOperator.get("time");
+        if (resultRedis == null || resultRedis.equals("")) {
+            List<Time> resultCouchdb = timeMapper.getAll();
+            redisOperator.set("time", JsonUtils.objectToJson(resultCouchdb));
+            return resultCouchdb;
+        } else {
+            return JsonUtils.jsonToList(resultRedis, Time.class);
+        }
     }
 }
