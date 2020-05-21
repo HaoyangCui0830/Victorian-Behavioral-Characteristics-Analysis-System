@@ -31,49 +31,45 @@ class SimpleBarChart extends PureComponent {
         const center = {
             position: "absolute",
             margin: "auto",
-            top: 0,
-            bottom: 0,
+            top: "120px",
             left: 0,
             right: 0
         }
-        // if (this.props.loading) {
-        //     return (
-        //         <ResponsiveContainer height={100} width='100%'>
-        //             <Spinner
-        //                 style={center}
-        //                 color="primary"/>
-        //         </ResponsiveContainer>
-        //     )
-        // }
+        if (this.props.loading) {
+            return (
+                <ResponsiveContainer height={100} width='100%'>
+                    <Spinner style={center} color="primary"/>
+                </ResponsiveContainer>
+            )
+        }
 
         return (
             <div>
-                {/*{this.props.data.length > 0 ?*/}
-                <ResponsiveContainer height={300} width='100%'>
+                {this.props.data.length > 0 ?
+                <ResponsiveContainer height={400} width='100%'>
                     <BarChart
                         width={1200}
                         height={300}
                         data={this.props.data}
-
                     >
                         <XAxis dataKey="name"
                                interval={0}
                                angle={-45}
                                textAnchor="end"
-                               height={100}
-
+                               height={150}
+                               stroke="#98a5be"
                         />
-                        <YAxis yAxisId="left" orientation="left" />
+                        <YAxis stroke="#98a5be"/>
                         <Tooltip/>
                         <Bar
-                            yAxisId="left"
-                            dataKey="a"
-                            fill="#FFBB28"/>
+                            dataKey="value"
+                            fill="#FFBB28"
+                        />
 
                     </BarChart>
-                </ResponsiveContainer>
-                {/*     : <span className="text-center"><h3>No Sensor Sentiment</h3></span>*/}
-                {/*}*/}
+                 </ResponsiveContainer>
+                     : <span className="text-center"><h3>No Data</h3></span>
+                }
             </div>
         );
     }

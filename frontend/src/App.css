@@ -23,8 +23,9 @@
   color:floralwhite;
   border-radius:0
 }
-
-
+.page{
+  background-color: #4b6878;
+}
 .navbar-dark {
   background-color: #00102f;
 }
@@ -32,4 +33,12 @@
 .navbar-brand {
   font-family: 'Audiowide',serif;
   font-size: 26pt;
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  color: #444;
+
+@include clearfix();
 }

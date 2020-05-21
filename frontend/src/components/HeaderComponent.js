@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {Navbar, NavbarBrand, Nav, NavItem, Collapse, NavbarToggler} from "reactstrap"
 import {NavLink} from "react-router-dom";
-import {Dropdown, DropdownToggle, DropdownMenu, DropdownItem} from 'reactstrap';
+import {Dropdown, DropdownToggle, DropdownMenu, DropdownItem,Spinner} from 'reactstrap';
 import withContext from "../WithContext";
 
 class Header extends Component {
@@ -24,7 +24,7 @@ class Header extends Component {
     render() {
         const {isNavOpen, idDropdownOpen} = this.state;
         const {data, actions} = this.props;
-        const {selectedSource} = data;
+        const {selectedSource,isLoading} = data;
         const {onSelect}=actions;
         return (
             <Navbar dark expand="md">
@@ -56,9 +56,13 @@ class Header extends Component {
                             <DropdownItem onClick={onSelect}> Aurin 1</DropdownItem>
                             <DropdownItem divider/>
                             <DropdownItem header>Twitter</DropdownItem>
-                            <DropdownItem onClick={onSelect}> Twitter 1</DropdownItem>
+                            <DropdownItem onClick={onSelect}> Sentiment</DropdownItem>
+                            <DropdownItem onClick={onSelect}> Follower</DropdownItem>
+                            <DropdownItem onClick={onSelect}> Language</DropdownItem>
+                            <DropdownItem onClick={onSelect}> Hot Words</DropdownItem>
                         </DropdownMenu>
                     </Dropdown>
+                    {isLoading&&<Spinner color="primary"/>}
                 </div>
             </Navbar>
         )

@@ -5,6 +5,7 @@ import Footer from "./FooterComponent";
 import Map from "./MapContainer"
 import axios from "axios"
 import {Route, Redirect, Switch} from "react-router-dom"
+import {chartFormatter} from "../Utilities";
 
 export const AppContext = React.createContext()
 
@@ -13,8 +14,12 @@ class Main extends Component {
         super(props);
         this.state = {
             isLoading: false,
-            data: "",
+            timeData: "",
+            sentimentData:"",
+            attitudeData:"",
+            languageData:"",
             selectedSource:"",
+            map:null
         }
         const withLoading = (callback) => {
             return (...args) => {
@@ -23,16 +28,40 @@ class Main extends Component {
             }
         }
         this.actions = {
-            getSentiment: withLoading(async () => {
-                const result = await Promise.get('/api/categories')
+            getTime: withLoading(async () => {
+                const result = await axios.get('/api/time')
+                this.setState({timeData:chartFormatter["time"](result.data),isLoading:false})
             }),
-            onSelect: withLoading((item) => {
+            onSelect: withLoading(async(item) => {
                 let val = item.target.innerText
-                this.setState({selectedSource: val},async (val)=>{
+                let result;
+                switch (val) {
+                    case "Sentiment":
+                        result = await Promise.all([axios.get(`/api/attitude`),axios.get(`/api/sentiment`)])
+                        let [attitudeData,sentimentData]=result
+                        console.log(result)
+                        this.setState({
+                            attitudeData:attitudeData.data,
+                            sentimentData:chartFormatter["sentiment"](sentimentData.data),
+                            isLoading:false
+                        })
+                        break;
+                    case "Follower":
+                        result = await axios.get(`/api/follower`)
+                        this.setState({followerData:chartFormatter["follower"](result.data),isLoading:false})
+                        break;
+                    case "Language":
+                        result = await axios.get(`/api/no_english`)
+                        this.setState({languageData:chartFormatter["lang"](result.data),isLoading:false})
+                        break;
+                    default:
 
-                })
-                this.setState({selectedSource: val,isLoading:false})
+                }
+                this.setState({selectedSource: val})
             }),
+            setMap:(map)=>{
+                this.setState({map:map})
+            }
 
         }
     }
