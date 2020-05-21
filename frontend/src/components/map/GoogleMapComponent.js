@@ -5,6 +5,7 @@ import SimplePieChart from "../charts/PieChart";
 import {GEO} from "../../TestData/geo.js";
 import {Colors} from "../../Utilities";
 import withContext from "../../WithContext";
+import Loading from "../loadingComponent";
 
 class GoogleMapComponent extends Component {
     constructor(props) {
@@ -26,8 +27,6 @@ class GoogleMapComponent extends Component {
 
     componentWillUnmount() {
         window.google = {}
-        //     const {map} = this.state
-        //
     }
 
     createGoogleMap = () => {
@@ -46,10 +45,10 @@ class GoogleMapComponent extends Component {
     }
 
     createDataLayer = () => {
-        const {data} = this.props
+        const {suburbDetail, sentiment, followerData, data, wordSuburbData} = this.props
         const {selectedSource} = data
         const {map} = this.state
-        const {suburbDetail, sentiment, followerData} = this.props
+
         map.data.forEach((feature) => {
             map.data.remove(feature);
         });
@@ -109,10 +108,35 @@ class GoogleMapComponent extends Component {
                         fillOpacity: 0.7,
                     }
                 }
-
             })
         }
-
+        if (selectedSource === "Hot Words"&&wordSuburbData.length>0) {
+            console.log(wordSuburbData.length)
+            map.data.setStyle((feature) => {
+                let target = wordSuburbData.filter(suburb => suburb.name === feature.getProperty("name"))
+                if (target[0]) {
+                    let value = target[0].value
+                    let color
+                    if (value < 10)
+                        color = Colors.blue
+                    if (value < 50 && value >= 10)
+                        color = Colors.green
+                    if (value < 100 && value >= 50)
+                        color = Colors.yellow
+                    if (value < 200 && value >= 100)
+                        color = Colors.orange
+                    if (value >= 200)
+                        color = Colors.green
+                    return {
+                        strokeColor: '#FFAE3B',
+                        clickable: true,
+                        fillColor: color,
+                        strokeWeight: 1,
+                        fillOpacity: 0.7,
+                    }
+                }
+            })
+        }
 
         map.data.addListener('mouseover', function (event) {
             map.data.revertStyle();
@@ -152,11 +176,14 @@ class GoogleMapComponent extends Component {
     }
 
     render() {
-        if (this.props.suburbDetail || this.props.sentiment || this.props.followerData) {
+        if (this.props.suburbDetail || this.props.sentiment || this.props.followerData || this.props.wordSuburbData) {
             this.createDataLayer()
         }
         return (
-            <div id="map" style={{width: '100%', height: '1200px'}}/>
+            <>
+                <div id="map" style={{width: '100%', height: '1200px'}}/>
+                {this.props.isLoading && <Loading/>}
+            </>
         )
     }
 }
