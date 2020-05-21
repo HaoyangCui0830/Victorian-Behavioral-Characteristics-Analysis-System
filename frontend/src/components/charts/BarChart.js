@@ -1,81 +1,52 @@
-import React, {PureComponent} from 'react';
-import {
-    BarChart,
-    Bar,
-    XAxis,
-    YAxis,
-    CartesianGrid,
-    Tooltip,
-    Legend,
-    ResponsiveContainer
-} from 'recharts';
-import {Spinner} from "reactstrap";
+import React, { Component } from 'react';
+import ReactDOM from "react-dom";
 
-const CustomizedAxisTick = props => {
-    const {x, y, payload} = props
-    return (
-        <g transform={`translate(${x},${y})`}>
-            <text x={0} y={0} dy={16} fill="#666">
-                {payload.value.split(",").map((val, index) => (
-                    <tspan key={index} textAnchor="middle" x="0" dy="20">{val}</tspan>)
-                )}
-            </text>
-        </g>
-    )
-}
+// Include the react-fusioncharts component
+import ReactFC from "react-fusioncharts";
 
-class SimpleBarChart extends PureComponent {
+// Include the fusioncharts library
+import FusionCharts from "fusioncharts";
+
+// Include the chart type
+import Column2D from "fusioncharts/fusioncharts.charts";
+
+// Include the theme as fusion
+import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
+import GammelTheme from 'fusioncharts/themes/fusioncharts.theme.gammel';
+import CandyTheme from 'fusioncharts/themes/fusioncharts.theme.candy';
+import ZuneTheme from 'fusioncharts/themes/fusioncharts.theme.zune';
+import OceanTheme from 'fusioncharts/themes/fusioncharts.theme.ocean';
+import CarbonTheme from 'fusioncharts/themes/fusioncharts.theme.carbon';
+
+// Adding the chart and theme as dependency to the core fusioncharts
+ReactFC.fcRoot(FusionCharts, Column2D, CandyTheme);
 
 
+class SimpleBarChart extends Component  {
     render() {
-        const center = {
-            position: "absolute",
-            margin: "auto",
-            top: 0,
-            bottom: 0,
-            left: 0,
-            right: 0
-        }
-        // if (this.props.loading) {
-        //     return (
-        //         <ResponsiveContainer height={100} width='100%'>
-        //             <Spinner
-        //                 style={center}
-        //                 color="primary"/>
-        //         </ResponsiveContainer>
-        //     )
-        // }
+        const my_data = this.props.data
+        const update_my_data = my_data.map(({ a, name }) => {
+            return { label: name, value: a }
+          })
+        const chartConfigs = {
+            type: "column2d", // The chart type
+            width: "100%", // Width of the chart
+            height: "600", // Height of the chart
+            dataFormat: "json", // Data type
+            dataSource : {
+                "chart": {
+                  "caption": "Lorem Ipsum",
+                  "subCaption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                  "xAxisName": "Suburbs",
+                  "yAxisName": "Lorem Ipsum",
+                  "theme": "candy"
+                },
+                "data": update_my_data
+              },
+            };
 
-        return (
-            <div>
-                {/*{this.props.data.length > 0 ?*/}
-                <ResponsiveContainer height={300} width='100%'>
-                    <BarChart
-                        width={1200}
-                        height={300}
-                        data={this.props.data}
+        return <ReactFC {...chartConfigs} />;
 
-                    >
-                        <XAxis dataKey="name"
-                               interval={0}
-                               angle={-45}
-                               textAnchor="end"
-                               height={100}
-
-                        />
-                        <YAxis yAxisId="left" orientation="left" />
-                        <Tooltip/>
-                        <Bar
-                            yAxisId="left"
-                            dataKey="a"
-                            fill="#FFBB28"/>
-
-                    </BarChart>
-                </ResponsiveContainer>
-                {/*     : <span className="text-center"><h3>No Sensor Sentiment</h3></span>*/}
-                {/*}*/}
-            </div>
-        );
     }
 }
 
