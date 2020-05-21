@@ -171,7 +171,6 @@ public class RedisOperator {
 
     /**
      * @param key
-     * @return 列表key的头元素。
      */
     public String lpop(String key) {
         return (String)redisTemplate.opsForList().leftPop(key);
@@ -180,7 +179,6 @@ public class RedisOperator {
     /**
      * @param key
      * @param value
-     * @return 执行 LPUSH命令后，列表的长度。
      */
     public long rpush(String key, String value) {
         return redisTemplate.opsForList().rightPush(key, value);
