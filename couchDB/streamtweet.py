@@ -7,19 +7,19 @@ from shapely.geometry import Point
 from shapely.geometry.polygon import Polygon
 
 
-boundary = json.load(open('features.json'))
-suburbs = [item['properties']['vic_loca_2'] for item in boundary['features']]
+boundary = json.load(open('geo.json'))
+suburbs = [item['properties']['name'] for item in boundary['features']]
 
 
 def find_suburb(coordinate):
 	for item in boundary['features']:
 		if item['geometry']['type'] == 'Polygon':
 			if Polygon(item['geometry']['coordinates'][0]).contains(Point(coordinate)):
-				return item['properties']['vic_loca_2']
+				return item['properties']['name']
 		elif item['geometry']['type']=='MultiPolygon':
 			for area in item['geometry']['coordinates']:
 				if Polygon(area[0]).contains(Point(coordinate)):
-					return item['properties']['vic_loca_2']
+					return item['properties']['name']
 	return "None"
 
 
@@ -42,13 +42,13 @@ auth.set_access_token("974163114433306624-fSrCQPL7HCM33RxE76V2dvFmsuQ1v5n", "i2e
 
 api = tweepy.API(auth)
 
-server = pycouchdb.Server("http://admin:1q2w3e4r@localhost:5984/")
+server = pycouchdb.Server("http://admin:123456r@172.26.133.110:5984/")
 #print(server.info())
-try:
-    db = server.create('ccctest')
-except Exception as e:
-    db = server.database("ccctest")
-db = server.database("ccctest")
+# try:
+#     db = server.create('ccctest1')
+# except Exception as e:
+#     db = server.database("ccctest1")
+db = server.database("twitter")
 time.sleep(5)
 # try:
 #     database = server.create('mytest')

@@ -1,1 +1,376 @@
-{"rows": [{"key": "omeo", "value": 23.5522556616124}, {"key": "wilsons promontory", "value": 22.129364567221}, {"key": "heidelberg west", "value": 22.6640091767105}, {"key": "baw baw", "value": 20.3543398426048}, {"key": "pascoe vale", "value": 15.1082055715876}, {"key": "keysborough", "value": 17.2235736966832}, {"key": "surrey hills", "value": 9.74974640236383}, {"key": "grampians", "value": 22.0735508403706}, {"key": "benalla", "value": 24.5987661728197}, {"key": "longford", "value": 24.6783777005005}, {"key": "windsor", "value": 14.8056633405175}, {"key": "essendon west", "value": 16.3967807268241}, {"key": "nhill", "value": 24.3101772956364}, {"key": "mornington", "value": 21.4180010610605}, {"key": "princes hill", "value": 13.3081393676674}, {"key": "lalor", "value": 21.7790899793671}, {"key": "sandhurst", "value": 19.7373856950556}, {"key": "keilor", "value": 16.6424695634301}, {"key": "newcomb", "value": 27.4916120401312}, {"key": "park orchards", "value": 12.487603711593}, {"key": "rosebud", "value": 27.3230700253801}, {"key": "horsham", "value": 23.5523405599213}, {"key": "knoxfield", "value": 17.9237783478165}, {"key": "tottenham", "value": 17.9057109834289}, {"key": "toora", "value": 12.6587566910816}, {"key": "flora hill", "value": 19.4795610666297}, {"key": "taylors lakes", "value": 16.2042138353215}, {"key": "diamond creek", "value": 15.5374195841686}, {"key": "mansfield", "value": 22.1375440878818}, {"key": "wattle glen", "value": 15.5374195841686}, {"key": "dandenong", "value": 16.7319849501535}, {"key": "lynbrook", "value": 20.2788311307622}, {"key": "yea", "value": 23.1067657537246}, {"key": "ashwood", "value": 15.3993290697449}, {"key": "cairnlea", "value": 16.1764921152086}, {"key": "westmeadows", "value": 20.4134725704276}, {"key": "patterson lakes", "value": 19.0144312975927}, {"key": "airport west", "value": 17.5234951257419}, {"key": "aberfeldie", "value": 13.4230570962852}, {"key": "seaford", "value": 23.8937357179661}, {"key": "myrtleford", "value": 23.6957405899778}, {"key": "california gully", "value": 28.4527664213015}, {"key": "clarinda", "value": 16.8707200597589}, {"key": "montrose", "value": 18.9333092568884}, {"key": "mooroolbark", "value": 18.9333092568884}, {"key": "highett", "value": 15.7253507475577}, {"key": "ringwood north", "value": 13.5377470328147}, {"key": "docklands", "value": 13.694254324131}, {"key": "maribyrnong", "value": 13.5415428865629}, {"key": "campbellfield", "value": 24.1599706582599}, {"key": "paynesville", "value": 23.5522556616124}, {"key": "anglesea", "value": 16.6836443600771}, {"key": "mont albert", "value": 11.4985160271096}, {"key": "noble park north", "value": 19.7274708674849}, {"key": "geelong", "value": 23.1554206883045}, {"key": "richmond", "value": 14.3077211123785}, {"key": "mordialloc", "value": 15.8763840874931}, {"key": "gladstone park", "value": 20.4134725704276}, {"key": "panton hill", "value": 14.5422143632836}, {"key": "caulfield", "value": 13.2802714905803}, {"key": "chiltern", "value": 19.9341284513808}, {"key": "black rock", "value": 11.8998245667268}, {"key": "north geelong", "value": 23.1554206883045}, {"key": "braybrook", "value": 21.1010345704317}, {"key": "st kilda east", "value": 16.0005054043332}, {"key": "belgrave", "value": 16.7319849501535}, {"key": "doveton", "value": 26.0009361871409}, {"key": "werribee", "value": 23.0344641087974}, {"key": "tarneit", "value": 17.03179151918}, {"key": "craigieburn", "value": 19.7071695359678}, {"key": "chadstone", "value": 15.3993290697449}, {"key": "forest hill", "value": 15.2499488620597}, {"key": "edithvale", "value": 15.8763840874931}, {"key": "rosanna", "value": 14.6918452761179}, {"key": "moe", "value": 30.1525817773309}, {"key": "winchelsea", "value": 18.979309673664}, {"key": "glen huntly", "value": 12.542502177607}, {"key": "hughesdale", "value": 12.5520795325588}, {"key": "lakes entrance", "value": 25.5402939343556}, {"key": "north melbourne", "value": 15.1488631206023}, {"key": "ardeer", "value": 21.8602740038103}, {"key": "wyndham vale", "value": 20.969072126567}, {"key": "reservoir", "value": 21.1355389387032}, {"key": "mickleham", "value": 19.7071695359678}, {"key": "footscray", "value": 17.9057109834289}, {"key": "mccrae", "value": 27.3230700253801}, {"key": "fitzroy", "value": 16.6084034012131}, {"key": "collingwood", "value": 16.6084034012131}, {"key": "heatherton", "value": 16.1662509308421}, {"key": "carnegie", "value": 12.542502177607}, {"key": "eaglehawk", "value": 28.4527664213015}, {"key": "laverton", "value": 23.6802309276784}, {"key": "yallambie", "value": 14.6918452761179}, {"key": "alphington", "value": 13.2769254678767}, {"key": "kingsbury", "value": 11.9675869929981}, {"key": "camperdown", "value": 23.3036915096216}, {"key": "west footscray", "value": 17.9057109834289}, {"key": "cranbourne north", "value": 21.1199598274687}, {"key": "coldstream", "value": 20.1607874126424}, {"key": "healesville", "value": 22.2517982232422}, {"key": "mckinnon", "value": 13.2520308130998}, {"key": "narre warren south", "value": 16.9120377452113}, {"key": "elwood", "value": 14.7822239799854}, {"key": "coolaroo", "value": 24.1599706582599}, {"key": "aspendale", "value": 15.8763840874931}, {"key": "bayswater", "value": 20.8107735292582}, {"key": "yarraville", "value": 15.2079834321543}, {"key": "melbourne", "value": 14.2842040126891}, {"key": "maiden gully", "value": 17.1242006871953}, {"key": "vermont south", "value": 13.5888846205615}, {"key": "elsternwick", "value": 14.4552477281879}, {"key": "oakleigh", "value": 16.8707200597589}, {"key": "chelsea heights", "value": 19.91258284024}, {"key": "abbotsford", "value": 13.0231893695243}, {"key": "hamlyn heights", "value": 20.0045114589109}, {"key": "parkdale", "value": 15.8763840874931}, {"key": "stawell", "value": 25.8493394125051}, {"key": "tecoma", "value": 16.7319849501535}, {"key": "french island", "value": null}, {"key": "warranwood", "value": 13.5377470328147}, {"key": "woodend", "value": 16.0930213672799}, {"key": "point cook", "value": 13.5447592297361}, {"key": "numurkah", "value": 25.2919876359716}, {"key": "newport", "value": 14.4458083872103}, {"key": "box hill", "value": 12.0487491361854}, {"key": "maryborough", "value": 29.9289573762614}, {"key": "nunawading", "value": 14.8003197764236}, {"key": "norlane", "value": 30.5861308377609}, {"key": "fitzroy north", "value": 13.3081393676674}, {"key": "albion", "value": 21.8602740038103}, {"key": "geelong west", "value": 20.0045114589109}, {"key": "croydon hills", "value": 13.5377470328147}, {"key": "meadow heights", "value": 21.657416471328}, {"key": "huntingdale", "value": 15.3993290697449}, {"key": "kingsville", "value": 15.2079834321543}, {"key": "bonbeach", "value": 19.91258284024}, {"key": "bell park", "value": 23.1554206883045}, {"key": "portarlington", "value": 23.3402539463118}, {"key": "murrumbeena", "value": 11.6198225591381}, {"key": "chelsea", "value": 19.91258284024}, {"key": "moorabbin", "value": 16.1662509308421}, {"key": "mount evelyn", "value": 19.2358135134318}, {"key": "springvale south", "value": 19.6021037798839}, {"key": "burwood east", "value": 12.5031279957512}, {"key": "hawthorn", "value": 11.3743409147863}, {"key": "glenroy", "value": 20.884574525402}, {"key": "broadmeadows", "value": 26.8883129120189}, {"key": "camberwell", "value": 9.74974640236383}, {"key": "rowville", "value": 14.6916857428201}, {"key": "yarram", "value": 24.6783777005005}, {"key": "doncaster east", "value": 13.5733015886004}, {"key": "mount waverley", "value": 12.8207107137657}, {"key": "sunshine", "value": 21.3194503833284}, {"key": "blackburn south", "value": 13.573487028401}, {"key": "carrum", "value": 19.0144312975927}, {"key": "bendigo", "value": 17.8755770093933}, {"key": "wheelers hill", "value": 11.9257952035555}, {"key": "sandringham", "value": 11.8998245667268}, {"key": "canterbury", "value": 9.74974640236383}, {"key": "glen waverley", "value": 11.9257952035555}, {"key": "bellfield", "value": 24.1599706582599}, {"key": "thomastown", "value": 21.7790899793671}, {"key": "hurstbridge", "value": 14.5422143632836}, {"key": "frankston south", "value": 15.0011043284064}, {"key": "donvale", "value": 12.487603711593}, {"key": "brighton east", "value": 11.7659384224265}, {"key": "boronia", "value": 20.8107735292582}, {"key": "endeavour hills", "value": 16.7081170853105}, {"key": "somerton", "value": 18.8100636599471}, {"key": "oakleigh south", "value": 16.8707200597589}, {"key": "wonga", "value": 12.487603711593}, {"key": "cranbourne west", "value": 24.5696461546969}, {"key": "clayton south", "value": 16.8707200597589}, {"key": "warrandyte", "value": 14.5422143632836}, {"key": "hallam", "value": 18.8514464165532}, {"key": "miners rest", "value": 27.164928046194}, {"key": "blackburn", "value": 13.573487028401}, {"key": "melton south", "value": 26.1059477712999}, {"key": "fawkner", "value": 20.9517473155955}, {"key": "selby", "value": 16.7319849501535}, {"key": "bulleen", "value": 13.8849652032163}, {"key": "west melbourne", "value": 13.694254324131}, {"key": "mount martha", "value": 14.9302643169927}, {"key": "hampton", "value": 12.4162984584038}, {"key": "edi", "value": 15.8763840874931}, {"key": "viewbank", "value": 14.6918452761179}, {"key": "the basin", "value": 20.8107735292582}, {"key": "wangaratta", "value": 24.9147301776746}, {"key": "pakenham", "value": 22.6223930371934}, {"key": "dingley village", "value": 16.0257452546366}, {"key": "altona north", "value": 21.8401001098242}, {"key": "truganina", "value": 17.1363613333437}, {"key": "north warrandyte", "value": 14.5422143632836}, {"key": "sunbury", "value": 19.9271815127136}, {"key": "st albans", "value": 21.784099078387}, {"key": "daylesford", "value": 22.114721169435}, {"key": "alexandra", "value": 23.3286219920568}, {"key": "olinda", "value": 16.7319849501535}, {"key": "swan hill", "value": 23.5915629799291}, {"key": "merbein", "value": 25.4490168902174}, {"key": "upwey", "value": 16.7319849501535}, {"key": "mount dandenong", "value": 16.7319849501535}, {"key": "mooroopna", "value": 25.0166317490583}, {"key": "lorne", "value": 16.6836443600771}, {"key": "drouin", "value": 22.7822806477385}, {"key": "altona", "value": 18.3390183311306}, {"key": "lysterfield", "value": 14.6916857428201}, {"key": "ferntree gully", "value": 19.746826774679}, {"key": "grovedale", "value": 18.9661442628568}, {"key": "carrum downs", "value": 23.8937357179661}, {"key": "silvan", "value": 19.2358135134318}, {"key": "east melbourne", "value": 13.335916654272}, {"key": "castlemaine", "value": 20.8747606471203}, {"key": "bannockburn", "value": 18.979309673664}, {"key": "bentleigh", "value": 13.2520308130998}, {"key": "lilydale", "value": 20.1607874126424}, {"key": "buninyong", "value": 16.7652059013177}, {"key": "seville", "value": 20.1607874126424}, {"key": "wendouree", "value": 27.164928046194}, {"key": "st arnaud", "value": 25.8493394125051}, {"key": "lah", "value": 20.0329360058361}, {"key": "beaconsfield", "value": 18.051609082722}, {"key": "thornbury", "value": 16.8289349521242}, {"key": "deer park", "value": 20.6257124517199}, {"key": "tooradin", "value": 20.7957355090724}, {"key": "ascot", "value": 19.4795610666297}, {"key": "moora", "value": 16.1662509308421}, {"key": "newborough", "value": 30.1525817773309}, {"key": "garfield", "value": 20.6529982523295}, {"key": "plenty", "value": 15.5374195841686}, {"key": "yarrambat", "value": 15.5374195841686}, {"key": "research", "value": 14.5422143632836}, {"key": "skye", "value": 19.7373856950556}, {"key": "gordon", "value": 20.5294028681813}, {"key": "sale", "value": 22.1909902419229}, {"key": "bentleigh east", "value": 13.2520308130998}, {"key": "churchill", "value": 21.5781535984214}, {"key": "ormond", "value": 12.542502177607}, {"key": "loch", "value": 23.6744631015021}, {"key": "monbulk", "value": 19.2358135134318}, {"key": "kangaroo flat", "value": 25.3560750626336}, {"key": "mount eliza", "value": 14.0722458992135}, {"key": "hastings", "value": 23.2157122784492}, {"key": "parkville", "value": 12.4778187806715}, {"key": "kerang", "value": 25.3854753456266}, {"key": "cranbourne south", "value": 20.7957355090724}, {"key": "rochester", "value": 25.245690352224}, {"key": "clifton springs", "value": 19.715151861981}, {"key": "port melbourne", "value": 14.2842040126891}, {"key": "emerald", "value": 18.051609082722}, {"key": "vermont", "value": 13.5888846205615}, {"key": "rushworth", "value": 25.245690352224}, {"key": "queenscliff", "value": 17.0160666698552}, {"key": "kensington", "value": 13.8847787207032}, {"key": "mount cottrell", "value": 26.1059477712999}, {"key": "kinglake", "value": 20.9404566452619}, {"key": "beaufort", "value": 25.8284226507689}, {"key": "gunbower", "value": 23.6005330778253}, {"key": "somerville", "value": 21.4180010610605}, {"key": "towong", "value": 21.6152259968474}, {"key": "newtown", "value": 13.5514274143566}, {"key": "belmont", "value": 21.00188402957}, {"key": "pearcedale", "value": 20.7957355090724}, {"key": "warrnambool", "value": 21.7558792223528}, {"key": "creswick", "value": 23.6095862927779}, {"key": "wonthaggi", "value": 23.6744631015021}, {"key": "frankston north", "value": 29.1820165017716}, {"key": "ashburton", "value": 11.3910741978575}, {"key": "warragul", "value": 20.3543398426048}, {"key": "mount beauty", "value": 21.6152259968474}, {"key": "wallan", "value": 21.0289626832461}, {"key": "heidelberg", "value": 14.6918452761179}, {"key": "eaglemont", "value": 11.5120403582047}, {"key": "ascot vale", "value": 14.5015940803376}, {"key": "balwyn", "value": 11.5025430292198}, {"key": "kilmore", "value": 23.1067657537246}, {"key": "koo wee rup", "value": 24.0871757735033}, {"key": "carlton north", "value": 13.3081393676674}, {"key": "altona meadows", "value": 19.8297962247625}, {"key": "ararat", "value": 25.8493394125051}, {"key": "carlton", "value": 15.5772273838643}, {"key": "bairnsdale", "value": 25.5402939343556}, {"key": "cranbourne", "value": 21.1199598274687}, {"key": "eltham", "value": 13.7132814971256}, {"key": "beechworth", "value": 19.9341284513808}, {"key": "dromana", "value": 22.0207033880978}, {"key": "watsonia", "value": 17.2257161959402}, {"key": "dandenong north", "value": 19.7274708674849}, {"key": "montmorency", "value": 15.630518689686}, {"key": "briar hill", "value": 15.630518689686}, {"key": "bellfield", "value": 24.1599706582599}, {"key": "hoppers crossing", "value": 17.1363613333437}, {"key": "whittlesea", "value": 21.0289626832461}, {"key": "broadford", "value": 23.1067657537246}, {"key": "hillside", "value": 16.6093589778307}, {"key": "aspendale gardens", "value": 15.8763840874931}, {"key": "barwon heads", "value": 17.0160666698552}, {"key": "ocean grove", "value": 17.0160666698552}, {"key": "korumburra", "value": 22.129364567221}, {"key": "trafalgar", "value": 20.3543398426048}, {"key": "alfredton", "value": 16.7652059013177}, {"key": "mentone", "value": 16.1662509308421}, {"key": "wonga park", "value": 12.487603711593}, {"key": "gannawarra", "value": 25.3854753456266}, {"key": "toorak", "value": 12.6587566910816}, {"key": "loch sport", "value": 24.6783777005005}, {"key": "bena", "value": 24.5987661728197}, {"key": "st andrews", "value": 14.5422143632836}, {"key": "seymour", "value": 28.6791827055518}, {"key": "avoca", "value": 25.8284226507689}, {"key": "seabrook", "value": 17.4801421579647}, {"key": "kyneton", "value": 20.412869215129}, {"key": "bruthen", "value": 23.5522556616124}, {"key": "euroa", "value": 23.3286219920568}, {"key": "corio", "value": 30.5861308377609}, {"key": "kings park", "value": 21.784099078387}, {"key": "south melbourne", "value": 14.0689346361323}, {"key": "chirnside park", "value": 18.9333092568884}, {"key": "yallourn north", "value": 22.1409650675504}, {"key": "malvern", "value": 11.185512097578}, {"key": "morwell", "value": 30.1525817773309}, {"key": "keilor east", "value": 17.5234951257419}, {"key": "sunshine north", "value": 21.3194503833284}, {"key": "niddrie", "value": 16.3967807268241}, {"key": "lockington", "value": 23.6005330778253}, {"key": "spring gully", "value": 19.4795610666297}, {"key": "malvern east", "value": 11.185512097578}, {"key": "indigo valley", "value": 19.9341284513808}, {"key": "kew", "value": 10.8716362871601}, {"key": "clunes", "value": 23.6095862927779}, {"key": "ada", "value": 12.6587566910816}, {"key": "bayswater north", "value": 17.8989031051609}, {"key": "craigie", "value": 19.7071695359678}, {"key": "west wodonga", "value": 23.4328735003599}, {"key": "rutherglen", "value": 22.8971310226156}, {"key": "yarrawonga", "value": 24.340070443679}, {"key": "cobram", "value": 25.2919876359716}, {"key": "bunyip", "value": 20.6529982523295}, {"key": "echuca", "value": 23.6005330778253}, {"key": "moolap", "value": 27.4916120401312}, {"key": "leopold", "value": 19.6017201608315}, {"key": "bright", "value": 11.7659384224265}, {"key": "orbost", "value": 23.5522556616124}, {"key": "cockatoo", "value": 18.051609082722}, {"key": "riddells creek", "value": 15.5963816937441}, {"key": "white hills", "value": 19.4795610666297}, {"key": "hampton park", "value": 20.2788311307622}, {"key": "cranbourne east", "value": 20.7957355090724}, {"key": "red cliffs", "value": 26.5682662997466}, {"key": "ivanhoe", "value": 11.4403591249695}, {"key": "huntly", "value": 12.542502177607}, {"key": "brighton", "value": 11.7659384224265}, {"key": "hamilton", "value": 22.0735508403706}, {"key": "southbank", "value": 13.694254324131}, {"key": "east bendigo", "value": 19.4795610666297}, {"key": "kyabram", "value": 25.245690352224}, {"key": "burwood", "value": 12.5031279957512}, {"key": "ivanhoe east", "value": 11.5120403582047}, {"key": "kew east", "value": 10.8716362871601}, {"key": "nagambie", "value": 23.3286219920568}, {"key": "tullamarine", "value": 20.4134725704276}, {"key": "kennington", "value": 19.4795610666297}, {"key": "wodonga", "value": 23.4328735003599}, {"key": "sunshine west", "value": 21.8602740038103}, {"key": "taylors hill", "value": 16.6093589778307}, {"key": "delahey", "value": 20.0329360058361}, {"key": "hadfield", "value": 20.884574525402}, {"key": "moorabbin airport", "value": 16.1662509308421}, {"key": "yackandandah", "value": 17.5502429748194}, {"key": "inverloch", "value": 23.6744631015021}, {"key": "moonee ponds", "value": 13.4230570962852}, {"key": "coburg north", "value": 19.3932361132388}, {"key": "preston", "value": 18.3026987103547}, {"key": "yarra glen", "value": 22.2517982232422}, {"key": "portland", "value": 24.9547352944793}, {"key": "yallourn", "value": 22.1409650675504}, {"key": "strathfieldsaye", "value": 14.9176877142295}, {"key": "waterways", "value": 15.8763840874931}, {"key": "braeside", "value": 15.8763840874931}, {"key": "melton west", "value": 22.6010871115843}, {"key": "melton", "value": 22.6010871115843}, {"key": "brunswick east", "value": 14.1166791037858}, {"key": "greenvale", "value": 16.7859892534979}, {"key": "bundoora", "value": 17.2257161959402}, {"key": "mill park", "value": 17.5976571361259}, {"key": "greensborough", "value": 15.630518689686}, {"key": "epping", "value": 19.6320931546586}, {"key": "gisborne", "value": 15.5963816937441}, {"key": "colac", "value": 24.7703958343338}, {"key": "lara", "value": 17.4500213403591}, {"key": "cheltenham", "value": 15.7253507475577}, {"key": "wantirna south", "value": 14.0261717963262}, {"key": "templestowe lower", "value": 12.2878549029666}, {"key": "templestowe", "value": 12.2878549029666}, {"key": "south morang", "value": 17.5099535531353}, {"key": "macedon", "value": 15.5963816937441}, {"key": "shepparton", "value": 23.0586559276972}, {"key": "smythes creek", "value": 16.7652059013177}, {"key": "derrimut", "value": 20.6257124517199}, {"key": "brunswick", "value": 14.1166791037858}, {"key": "rockbank", "value": 26.1059477712999}, {"key": "keilor downs", "value": 18.5529546477145}, {"key": "hillside", "value": 16.6093589778307}, {"key": "beaumaris", "value": 11.8998245667268}, {"key": "scoresby", "value": 17.9237783478165}, {"key": "hawthorn east", "value": 11.3743409147863}, {"key": "northcote", "value": 13.2769254678767}, {"key": "fairfield", "value": 13.2769254678767}, {"key": "maffra", "value": 22.0859722753872}, {"key": "rosedale", "value": 22.0859722753872}, {"key": "newtown", "value": 13.5514274143566}, {"key": "highton", "value": 13.5514274143566}, {"key": "essendon", "value": 13.4230570962852}, {"key": "noble park", "value": 20.8221212806629}, {"key": "springvale", "value": 19.6021037798839}, {"key": "south yarra", "value": 13.335916654272}, {"key": "golden square", "value": 25.3560750626336}, {"key": "seddon", "value": 15.2079834321543}, {"key": "glen iris", "value": 9.70519152418591}, {"key": "leongatha", "value": 22.129364567221}, {"key": "albert park", "value": 12.4305997284647}, {"key": "st kilda", "value": 16.0005054043332}, {"key": "armadale", "value": 12.6587566910816}, {"key": "strathmore", "value": 14.4967282870322}, {"key": "coburg", "value": 16.9737178755449}, {"key": "williamstown", "value": 14.4458083872103}, {"key": "foster", "value": 22.129364567221}, {"key": "kilsyth", "value": 21.706929056309}, {"key": "croydon", "value": 13.5377470328147}, {"key": "heathcote", "value": 26.1442817684087}, {"key": "mead", "value": 19.8297962247625}, {"key": "traralgon", "value": 22.1409650675504}, {"key": "mildura", "value": 25.8374864784105}, {"key": "irymple", "value": 21.9562965137669}, {"key": "torquay", "value": 16.6836443600771}, {"key": "flemington", "value": 15.2401540494061}, {"key": "melbourne airport", "value": 16.7859892534979}, {"key": "bulla", "value": 16.7859892534979}, {"key": "frankston", "value": 29.1820165017716}, {"key": "langwarrin", "value": 19.7373856950556}, {"key": "lyndhurst", "value": 15.6236156066807}, {"key": "berwick", "value": 16.1527102633088}, {"key": "officer", "value": 18.051609082722}, {"key": "roxburgh park", "value": 18.8100636599471}, {"key": "prahran", "value": 14.8056633405175}, {"key": "brunswick west", "value": 15.1082055715876}, {"key": "pascoe vale south", "value": 15.1082055715876}, {"key": "balwyn north", "value": 11.5025430292198}, {"key": "box hill north", "value": 12.0487491361854}, {"key": "doncaster", "value": 13.8849652032163}, {"key": "mitcham", "value": 13.5888846205615}, {"key": "delacombe", "value": 24.3853043161998}, {"key": "ascot", "value": 19.4795610666297}, {"key": "narre warren north", "value": 16.9611400400851}, {"key": "narre warren", "value": 19.7671234863426}, {"key": "ringwood", "value": 13.5377470328147}, {"key": "clayton", "value": 16.8707200597589}, {"key": "mulgrave", "value": 13.2669681420044}, {"key": "robinvale", "value": 28.533834745269}, {"key": "flinders", "value": 14.9302643169927}, {"key": "romsey", "value": 19.281586376117}, {"key": "merton", "value": 18.8100636599471}, {"key": "wantirna", "value": 14.0261717963262}, {"key": "bacchus marsh", "value": 20.5294028681813}, {"key": "glengarry", "value": 22.1409650675504}, {"key": "ringwood east", "value": 17.8989031051609}, {"key": "sydenham", "value": 18.1408357207453}, {"key": "caroline springs", "value": 16.2401521230768}, {"key": "somers", "value": 23.2157122784492}]}
+{
+  "rows": [
+    {
+      "key": "Caulfield",
+      "value": 13.2802714905803
+    },
+    {
+      "key": "Carnegie",
+      "value": 12.542502177607
+    },
+    {
+      "key": "Kingsville",
+      "value": 15.2079834321543
+    },
+    {
+      "key": "Tottenham",
+      "value": 17.9057109834289
+    },
+    {
+      "key": "Fitzroy North",
+      "value": 13.3081393676674
+    },
+    {
+      "key": "Kingsbury",
+      "value": 11.9675869929981
+    },
+    {
+      "key": "Windsor",
+      "value": 14.8056633405175
+    },
+    {
+      "key": "Hawthorn",
+      "value": 11.3743409147863
+    },
+    {
+      "key": "Prahran",
+      "value": 14.8056633405175
+    },
+    {
+      "key": "Seddon",
+      "value": 15.2079834321543
+    },
+    {
+      "key": "Airport West",
+      "value": 17.5234951257419
+    },
+    {
+      "key": "Black Rock",
+      "value": 11.8998245667268
+    },
+    {
+      "key": "Northcote",
+      "value": 13.2769254678767
+    },
+    {
+      "key": "Fairfield",
+      "value": 13.2769254678767
+    },
+    {
+      "key": "Thornbury",
+      "value": 16.8289349521242
+    },
+    {
+      "key": "Princes Hill",
+      "value": 13.3081393676674
+    },
+    {
+      "key": "Abbotsford",
+      "value": 13.0231893695243
+    },
+    {
+      "key": "Brunswick East",
+      "value": 14.1166791037858
+    },
+    {
+      "key": "Collingwood",
+      "value": 16.6084034012131
+    },
+    {
+      "key": "Fitzroy",
+      "value": 16.6084034012131
+    },
+    {
+      "key": "Brunswick",
+      "value": 14.1166791037858
+    },
+    {
+      "key": "Carlton North",
+      "value": 13.3081393676674
+    },
+    {
+      "key": "Carlton",
+      "value": 15.5772273838643
+    },
+    {
+      "key": "Parkville",
+      "value": 12.4778187806715
+    },
+    {
+      "key": "Armadale",
+      "value": 12.6587566910816
+    },
+    {
+      "key": "Balwyn North",
+      "value": 11.5025430292198
+    },
+    {
+      "key": "Toorak",
+      "value": 12.6587566910816
+    },
+    {
+      "key": "Kew East",
+      "value": 10.8716362871601
+    },
+    {
+      "key": "Kew",
+      "value": 10.8716362871601
+    },
+    {
+      "key": "Canterbury",
+      "value": 9.74974640236383
+    },
+    {
+      "key": "Camberwell",
+      "value": 9.74974640236383
+    },
+    {
+      "key": "Hawthorn East",
+      "value": 11.3743409147863
+    },
+    {
+      "key": "Southbank",
+      "value": 13.694254324131
+    },
+    {
+      "key": "Ormond",
+      "value": 12.542502177607
+    },
+    {
+      "key": "Balwyn",
+      "value": 11.5025430292198
+    },
+    {
+      "key": "Preston",
+      "value": 18.3026987103547
+    },
+    {
+      "key": "Elwood",
+      "value": 14.7822239799854
+    },
+    {
+      "key": "Docklands",
+      "value": 13.694254324131
+    },
+    {
+      "key": "Richmond",
+      "value": 14.3077211123785
+    },
+    {
+      "key": "East Melbourne",
+      "value": 13.335916654272
+    },
+    {
+      "key": "South Yarra",
+      "value": 13.335916654272
+    },
+    {
+      "key": "Glen Iris",
+      "value": 9.70519152418591
+    },
+    {
+      "key": "North Melbourne",
+      "value": 15.1488631206023
+    },
+    {
+      "key": "Hadfield",
+      "value": 20.884574525402
+    },
+    {
+      "key": "Brunswick West",
+      "value": 15.1082055715876
+    },
+    {
+      "key": "Coburg North",
+      "value": 19.3932361132388
+    },
+    {
+      "key": "Malvern East",
+      "value": 11.185512097578
+    },
+    {
+      "key": "Reservoir",
+      "value": 21.1355389387032
+    },
+    {
+      "key": "Malvern",
+      "value": 11.185512097578
+    },
+    {
+      "key": "Glen Huntly",
+      "value": 12.542502177607
+    },
+    {
+      "key": "Coburg",
+      "value": 16.9737178755449
+    },
+    {
+      "key": "Fawkner",
+      "value": 20.9517473155955
+    },
+    {
+      "key": "Ashburton",
+      "value": 11.3910741978575
+    },
+    {
+      "key": "Pascoe Vale South",
+      "value": 15.1082055715876
+    },
+    {
+      "key": "Pascoe Vale",
+      "value": 15.1082055715876
+    },
+    {
+      "key": "St Kilda East",
+      "value": 16.0005054043332
+    },
+    {
+      "key": "South Melbourne",
+      "value": 14.0689346361323
+    },
+    {
+      "key": "Essendon",
+      "value": 13.4230570962852
+    },
+    {
+      "key": "Flemington",
+      "value": 15.2401540494061
+    },
+    {
+      "key": "Albert Park",
+      "value": 12.4305997284647
+    },
+    {
+      "key": "Murrumbeena",
+      "value": 11.6198225591381
+    },
+    {
+      "key": "St Kilda",
+      "value": 16.0005054043332
+    },
+    {
+      "key": "Glenroy",
+      "value": 20.884574525402
+    },
+    {
+      "key": "Kensington",
+      "value": 13.8847787207032
+    },
+    {
+      "key": "Hughesdale",
+      "value": 12.5520795325588
+    },
+    {
+      "key": "Strathmore",
+      "value": 14.4967282870322
+    },
+    {
+      "key": "Moonee Ponds",
+      "value": 13.4230570962852
+    },
+    {
+      "key": "Aberfeldie",
+      "value": 13.4230570962852
+    },
+    {
+      "key": "Ascot Vale",
+      "value": 14.5015940803376
+    },
+    {
+      "key": "Elsternwick",
+      "value": 14.4552477281879
+    },
+    {
+      "key": "West Melbourne",
+      "value": 13.694254324131
+    },
+    {
+      "key": "McKinnon",
+      "value": 13.2520308130998
+    },
+    {
+      "key": "Bentleigh",
+      "value": 13.2520308130998
+    },
+    {
+      "key": "Brighton East",
+      "value": 11.7659384224265
+    },
+    {
+      "key": "Footscray",
+      "value": 17.9057109834289
+    },
+    {
+      "key": "Port Melbourne",
+      "value": 14.2842040126891
+    },
+    {
+      "key": "Maribyrnong",
+      "value": 13.5415428865629
+    },
+    {
+      "key": "Bentleigh East",
+      "value": 13.2520308130998
+    },
+    {
+      "key": "Brighton",
+      "value": 11.7659384224265
+    },
+    {
+      "key": "Essendon West",
+      "value": 16.3967807268241
+    },
+    {
+      "key": "Niddrie",
+      "value": 16.3967807268241
+    },
+    {
+      "key": "Yarraville",
+      "value": 15.2079834321543
+    },
+    {
+      "key": "Hampton",
+      "value": 12.4162984584038
+    },
+    {
+      "key": "Newport",
+      "value": 14.4458083872103
+    },
+    {
+      "key": "West Footscray",
+      "value": 17.9057109834289
+    },
+    {
+      "key": "Braybrook",
+      "value": 21.1010345704317
+    },
+    {
+      "key": "Beaumaris",
+      "value": 11.8998245667268
+    },
+    {
+      "key": "Williamstown",
+      "value": 14.4458083872103
+    },
+    {
+      "key": "Sandringham",
+      "value": 11.8998245667268
+    },
+    {
+      "key": "Altona North",
+      "value": 21.8401001098242
+    },
+    {
+      "key": "Altona",
+      "value": 18.3390183311306
+    },
+    {
+      "key": "Altona Meadows",
+      "value": 19.8297962247625
+    },
+    {
+      "key": "Seabrook",
+      "value": 17.4801421579647
+    }
+  ]
+}
