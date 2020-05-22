@@ -8,7 +8,7 @@ function (keys, values, rereduce) {
     for (value in values){
       return_value.total += values[value].total
       return_value.sentiment += values[value].sentiment
-      return_value.average = values[value].sentiment / values[value].total
+      return_value.average = return_value.sentiment / return_value.total
     }
     return return_value
 
@@ -16,6 +16,7 @@ function (keys, values, rereduce) {
     for (value in values){
       return_value.total += 1;
       return_value.sentiment += values[value].polarity
+      return_value.average = return_value.sentiment / return_value.total
     }
     return return_value;
   }

@@ -14,7 +14,7 @@ function (keys, values, rereduce) {
       return_value.neutral += values[value].neutral
       return_value.total += values[value].total
       return_value.sentiment += values[value].sentiment
-      return_value.average = values[value].sentiment / values[value].total
+      return_value.average = return_value.sentiment / return_value.total
     }
     return return_value
 
@@ -31,6 +31,7 @@ function (keys, values, rereduce) {
       }
       return_value.total += 1;
       return_value.sentiment += values[value].sentiment
+      return_value.average = return_value.sentiment / return_value.total
     }
     return return_value;
   }
