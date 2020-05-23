@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "== Set variables =="
-export node=172.26.131.98
+export node=172.26.133.57
 
 echo "== Start the containers =="
 sudo docker run --name couchdb -v /var/lib/docker/data:/opt/couchdb/data -e ERL_FLAGS='-setcookie "brumbrum"' -e NODENAME=${node} -e COUCHDB_USER=admin -e COUCHDB_PASSWORD=123456 -p 5984:5984 -p 5986:5986 -p 4369:4369 -p 9100-9200:9100-9200 -d couchdb:2.3

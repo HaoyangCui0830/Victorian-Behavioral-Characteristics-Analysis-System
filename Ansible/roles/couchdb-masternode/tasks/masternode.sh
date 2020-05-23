@@ -1,8 +1,8 @@
 #!/bin/bash
 
 echo "== Set variables =="
-declare -a slave_nodes=(172.26.131.27 172.26.131.98)
-export master_node=172.26.133.110
+declare -a slave_nodes=(172.26.130.221 172.26.133.57)
+export master_node=172.26.132.72
 export size=${#slave_nodes[@]}
 
 echo "== Start the container =="
