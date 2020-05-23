@@ -1,5 +1,8 @@
 #!/bin/bash
-curl -XPUT "http://admin:password@172.26.134.21:5984/twitter"
+git clone https://HaoyangCui0830:123456github@github.com/HaoyangCui0830/CCCProject2.git
+cd CCCProject2
+cd couchDB
+curl -XPUT "http://admin:123456@172.26.132.72:5984/twitter"
 sudo apt install -y npm
 npm install
 sudo apt install -y node-grunt-cli

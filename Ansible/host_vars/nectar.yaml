@@ -114,3 +114,9 @@ security_groups:
     port_range_min: 6379
     port_range_max: 6379
     remote_ip_prefix: 0.0.0.0/0
+  - name: redis-cluster
+    description: "redis-cluster"
+    protocol: tcp
+    port_range_min: 16379
+    port_range_max: 16379
+    remote_ip_prefix: 0.0.0.0/0

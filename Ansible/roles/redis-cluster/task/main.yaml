@@ -1,0 +1,16 @@
+- name: upload the redisScript script
+  become: yes
+  copy:
+    src: ./redisScript.sh
+    dest: /home/ubuntu/
+    mode: 0777
+
+- name: upload the redis config script
+  become: yes
+  copy:
+    src: ./redis.conf
+    dest: /home/ubuntu/
+
+- name: execute the subnode script
+  become: yes
+  shell: /home/ubuntu/redisScript.sh
