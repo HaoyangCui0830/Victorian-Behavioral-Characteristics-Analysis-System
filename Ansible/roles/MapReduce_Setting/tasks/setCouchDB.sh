@@ -14,5 +14,3 @@ pip install tweepy
 pip install pycouchdb
 pip install textblob
 pip install shapely
-
-python3 streamtweet.py
