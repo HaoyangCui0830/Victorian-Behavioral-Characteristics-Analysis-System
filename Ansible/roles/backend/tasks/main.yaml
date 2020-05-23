@@ -1,0 +1,10 @@
+- name: upload the backendDeploy script
+  become: yes
+  copy:
+    src: ./backendDeploy.sh
+    dest: /home/ubuntu/
+    mode: 0777
+
+- name: execute the backendDeploy script
+  become: yes
+  shell: /home/ubuntu/backendDeploy.sh
