@@ -11,14 +11,14 @@ module.exports = function (grunt) {
       "couch-push": {
         options: {
           user: 'admin',
-          pass: 'password'
+          pass: '123456'
         },
         twitter: {
         }
       }
     });
 
-  grunt.config.set(`couch-push.twitter.files.http://172\\.26\\.133\\.201:5984/${process.env.dbname}`, "/tmp/twitter.json");
+  grunt.config.set(`couch-push.twitter.files.http://172\\.26\\.132\\.72:5984/${process.env.dbname}`, "/tmp/twitter.json");
 console.log(JSON.stringify(grunt.config.get()));
   grunt.loadNpmTasks("grunt-couch");
 };
