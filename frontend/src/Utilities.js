@@ -43,6 +43,9 @@ export const chartFormatter = {
             {name: x, value: data[x]}
         ))
     },
+    common:data=>{
+        return data.map(suburb => ({name:suburb.key, value:suburb.value}))
+    }
 }
 
 export const Colors = {

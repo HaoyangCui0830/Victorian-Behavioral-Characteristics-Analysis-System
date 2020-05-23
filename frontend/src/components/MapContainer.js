@@ -18,12 +18,16 @@ class Map extends Component {
     render() {
         const {data, actions} = this.props;
         const {setWord} = actions;
-        const {timeData, isLoading, sentimentData, attitudeData, followerData, languageData, hotwordData, wordSuburbData, selectedSource} = data;
-        console.log(wordSuburbData)
+        const {timeData, isLoading, sentimentData, attitudeData, followerData, languageData, hotwordData, wordSuburbData, selectedSource,commonData} = data;
         return (
             <>
-                <GoogleMapComponent sentiment={sentimentData} suburbDetail={attitudeData} followerData={followerData}
-                                    wordSuburbData={wordSuburbData} isLoading={isLoading}/>
+                <GoogleMapComponent sentiment={sentimentData}
+                                    suburbDetail={attitudeData}
+                                    followerData={followerData}
+                                    wordSuburbData={wordSuburbData}
+                                    commonData={commonData}
+                                    isLoading={isLoading}
+                                    selectedSource={selectedSource}/>
                 <div className="page">
                     <Row>
                         <Col md={6}>
@@ -33,14 +37,15 @@ class Map extends Component {
                     <Row>
                         <Col md={12}>
                             {(!!sentimentData && selectedSource === "Sentiment") &&
-                            <SimpleBarChart data={sentimentData} selectedSource={selectedSource}/>}
+                            <SimpleBarChart data={sentimentData} selectedSource={selectedSource} onClick={()=>{}}/>}
                             {(!!followerData && selectedSource === "Follower") &&
-                            <SimpleBarChart data={followerData} selectedSource={selectedSource}/>}
+                            <SimpleBarChart data={followerData} selectedSource={selectedSource} onClick={()=>{}}/>}
                             {(!!languageData && selectedSource === "Language") &&
-                            <SimpleBarChart data={languageData} selectedSource={selectedSource}/>}
+                            <SimpleBarChart data={languageData} selectedSource={selectedSource} onClick={()=>{}}/>}
                             {(!!hotwordData && selectedSource === "Hot Words") &&
                             <SimpleBarChart data={hotwordData} selectedSource={selectedSource}
                                             onClick={(word) => setWord(word)}/>}
+                            {(!!commonData)&& <SimpleBarChart data={commonData} selectedSource={selectedSource} onClick={()=>{}}/>}
                         </Col>
                     </Row>
                 </div>

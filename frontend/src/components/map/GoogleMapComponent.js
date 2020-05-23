@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {mapStyle} from "./GoogleMapStyles";
 import ReactDOM from "react-dom"
 import SimplePieChart from "../charts/PieChart";
-import {GEO} from "../../TestData/geo.js";
+import {GEO} from "../../StaticData/geo.js";
 import {Colors} from "../../Utilities";
 import withContext from "../../WithContext";
 import Loading from "../loadingComponent";
@@ -41,12 +41,10 @@ class GoogleMapComponent extends Component {
         this.setState({
             map: map,
         })
-        // this.props.actions.setMap(map)
     }
 
     createDataLayer = () => {
-        const {suburbDetail, sentiment, followerData, data, wordSuburbData} = this.props
-        const {selectedSource} = data
+        const {suburbDetail, sentiment, followerData, wordSuburbData, selectedSource, commonData} = this.props
         const {map} = this.state
 
         map.data.forEach((feature) => {
@@ -61,15 +59,15 @@ class GoogleMapComponent extends Component {
                 let value = target[0].value
                 let color
                 if (value < 0)
-                    color = Colors.red
+                    color = Colors.blue
                 if (value < 0.05 && value >= 0)
-                    color = Colors.orange
+                    color = Colors.green
                 if (value < 0.1 && value >= 0.05)
                     color = Colors.yellow
                 if (value < 0.2 && value >= 0.1)
-                    color = Colors.lightyellow
+                    color = Colors.orange
                 if (value >= 0.2)
-                    color = Colors.green
+                    color = Colors.red
                 return {
                     strokeColor: '#FFAE3B',
                     clickable: true,
@@ -91,15 +89,15 @@ class GoogleMapComponent extends Component {
                     let value = target[0].value
                     let color
                     if (value < 1000)
-                        color = Colors.red
+                        color = Colors.blue
                     if (value < 10000 && value >= 1000)
-                        color = Colors.orange
+                        color = Colors.green
                     if (value < 100000 && value >= 10000)
                         color = Colors.yellow
                     if (value < 1000000 && value >= 100000)
-                        color = Colors.lightyellow
+                        color = Colors.orange
                     if (value >= 1000000)
-                        color = Colors.green
+                        color = Colors.red
                     return {
                         strokeColor: '#FFAE3B',
                         clickable: true,
@@ -111,7 +109,6 @@ class GoogleMapComponent extends Component {
             })
         }
         if (selectedSource === "Hot Words"&&wordSuburbData.length>0) {
-            console.log(wordSuburbData.length)
             map.data.setStyle((feature) => {
                 let target = wordSuburbData.filter(suburb => suburb.name === feature.getProperty("name"))
                 if (target[0]) {
@@ -126,6 +123,38 @@ class GoogleMapComponent extends Component {
                     if (value < 200 && value >= 100)
                         color = Colors.orange
                     if (value >= 200)
+                        color = Colors.red
+                    return {
+                        strokeColor: '#FFAE3B',
+                        clickable: true,
+                        fillColor: color,
+                        strokeWeight: 1,
+                        fillOpacity: 0.7,
+                    }
+                }
+            })
+        }
+
+        if (selectedSource === "Alcohol"||"Medium Income"||"Employment"||"Unemployment"||"Smoker") {
+            map.data.setStyle((feature) => {
+                let values =  commonData.map(suburb=>suburb.value)
+                let max =Math.max(...values)
+                let min =Math.min(...values)
+                let gap = (max-min)/5
+
+                let target = commonData.filter(suburb => suburb.name === feature.getProperty("name"))
+                if (target[0]) {
+                    let value = target[0].value
+                    let color
+                    if (value < min+gap)
+                        color = Colors.blue
+                    if (value < min+gap*2 && value >= min+gap)
+                        color = Colors.green
+                    if (value < min+gap*3 && value >= min+gap*2)
+                        color = Colors.yellow
+                    if (value < min+gap*4 && value >= min+gap*3)
+                        color = Colors.orange
+                    if (value >= min+gap*4)
                         color = Colors.green
                     return {
                         strokeColor: '#FFAE3B',
@@ -134,6 +163,10 @@ class GoogleMapComponent extends Component {
                         strokeWeight: 1,
                         fillOpacity: 0.7,
                     }
+                }else return {
+                    strokeColor: '#FFAE3B',
+                    strokeWeight: 1,
+                    fillColor: Colors.yellow,
                 }
             })
         }
@@ -176,7 +209,7 @@ class GoogleMapComponent extends Component {
     }
 
     render() {
-        if (this.props.suburbDetail || this.props.sentiment || this.props.followerData || this.props.wordSuburbData) {
+        if (this.props.suburbDetail || this.props.sentiment || this.props.followerData || this.props.wordSuburbData || this.props.commonData) {
             this.createDataLayer()
         }
         return (

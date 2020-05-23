@@ -6,6 +6,11 @@ import Map from "./MapContainer"
 import axios from "axios"
 import {Route, Redirect, Switch} from "react-router-dom"
 import {chartFormatter} from "../Utilities";
+import {ALCOHOL} from "../StaticData/aurin/alcohol";
+import {MINCOME} from "../StaticData/aurin/medium_income";
+import {SMOKER} from "../StaticData/aurin/smoker";
+import {UNEMPLOYMENT} from "../StaticData/aurin/unemployment";
+import {EMPLOYMENT} from "../StaticData/aurin/num-of-employed-people";
 
 export const AppContext = React.createContext()
 
@@ -22,7 +27,8 @@ class Main extends Component {
             selectedSource: "",
             selectedWord: "",
             wordSuburbData: "",
-            map: null
+            map: null,
+            commonData:''
         }
         const withLoading = (callback) => {
             return (...args) => {
@@ -42,7 +48,6 @@ class Main extends Component {
                     case "Sentiment":
                         result = await Promise.all([axios.get('/api/attitude'), axios.get('/api/sentiment')])
                         let [attitudeData, sentimentData] = result
-                        console.log(result)
                         this.setState({
                             attitudeData: attitudeData.data,
                             sentimentData: chartFormatter["sentiment"](sentimentData.data),
@@ -61,7 +66,23 @@ class Main extends Component {
                         result = await axios.get('/api/hotword')
                         this.setState({hotwordData: chartFormatter["word"](result.data), isLoading: false})
                         break;
+                    case "Alcohol":
+                        this.setState({commonData: chartFormatter["common"](ALCOHOL.rows), isLoading: false})
+                        break;
+                    case "Medium Income":
+                        this.setState({commonData: chartFormatter["common"](MINCOME.rows), isLoading: false})
+                        break;
+                    case "Smoker":
+                        this.setState({commonData: chartFormatter["common"](SMOKER.rows), isLoading: false})
+                        break;
+                    case "Unemployment":
+                        this.setState({commonData: chartFormatter["common"](UNEMPLOYMENT.rows), isLoading: false})
+                        break;
+                    case "Employment":
+                        this.setState({commonData: chartFormatter["common"](EMPLOYMENT.rows), isLoading: false})
+                        break;
                     default:
+                        this.setState({isLoading:false})
                 }
                 this.setState({selectedSource: val})
             }),

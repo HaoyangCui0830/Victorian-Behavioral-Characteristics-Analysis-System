@@ -53,7 +53,12 @@ class Header extends Component {
                         </DropdownToggle>
                         <DropdownMenu right>
                             <DropdownItem header>Aurin</DropdownItem>
-                            <DropdownItem onClick={onSelect}> Aurin 1</DropdownItem>
+                            <DropdownItem onClick={onSelect}> Alcohol</DropdownItem>
+                            <DropdownItem onClick={onSelect}> Living Region</DropdownItem>
+                            <DropdownItem onClick={onSelect}> Medium Income</DropdownItem>
+                            <DropdownItem onClick={onSelect}> Employment</DropdownItem>
+                            <DropdownItem onClick={onSelect}> Unemployment</DropdownItem>
+                            <DropdownItem onClick={onSelect}> Smoker</DropdownItem>
                             <DropdownItem divider/>
                             <DropdownItem header>Twitter</DropdownItem>
                             <DropdownItem onClick={onSelect}> Sentiment</DropdownItem>

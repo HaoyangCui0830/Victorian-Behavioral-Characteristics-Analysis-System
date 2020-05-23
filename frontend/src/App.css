@@ -51,14 +51,8 @@
 }
 
 .loading-component{
-  /*margin-left: -100px;*/
-  /*margin-top:-50px;*/
   position:fixed;
   top: 50%;
   left: 50%;
   color: floralwhite ;
-  /*width: 200px;*/
-  /*height: 100px;*/
-  /*border: 1px solid #f5f5f5;*/
-  /*background-color: hsla(0,0%,100%,.8);*/
 }
