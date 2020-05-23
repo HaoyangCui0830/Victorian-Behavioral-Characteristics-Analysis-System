@@ -5,6 +5,12 @@
     dest: /home/ubuntu/
     mode: 0777
 
+- name: upload the nginx_frontend script
+  become: yes
+  copy:
+    src: ./nginx.conf
+    dest: /home/ubuntu/
+
 - name: execute the nginx_frontend script
   become: yes
   shell: /home/ubuntu/nginx_frontend.sh
