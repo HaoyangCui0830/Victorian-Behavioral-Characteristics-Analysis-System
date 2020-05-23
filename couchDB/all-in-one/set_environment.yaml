@@ -1,0 +1,9 @@
+- hosts: all
+  vars_files:
+    - host_vars/wordpress.yaml
+  gather_facts: true
+
+  roles:
+    - role: wp-common
+    - role: wp-volumes
+    - role: wp-docker

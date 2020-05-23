@@ -1,0 +1,116 @@
+# project directory
+# change the directory to the project directory on your local machine
+project_directory: /Users/Shawn/Documents/subjects resource/CCC/Assignment/CCCProject2
+
+# Common vars
+availability_zone: melbourne-qh2-uom
+
+# Volume
+volumes:
+  - vol_name: volumes-01
+    vol_size: 20
+  - vol_name: volumes-02
+    vol_size: 20
+  - vol_name: volumes-03
+    vol_size: 20
+  - vol_name: volumes-04
+    vol_size: 20
+
+# Instance
+instances:
+  - name: instance1
+    volumes: ['volumes-01']
+    # # #      Network    # # # #
+    # Name              Public  #
+    # qh2-uom-internal  No      #
+    # Classic Provider  No      #
+    # qh2-uom           YES     #
+    # # # # # # # # # # # # # # #
+    network: qh2-uom-internal
+  - name: instance2
+    volumes: ['volumes-02']
+    network: qh2-uom-internal
+  - name: instance3
+    volumes: ['volumes-03']
+    network: qh2-uom-internal
+  - name: instance4
+    volumes: ['volumes-04']
+    network: qh2-uom-internal
+
+instance_image: 45225edb-66d8-4fd0-bf41-132a31a18166
+instance_key_name: xinwu-key
+# # # # #          instance_flavor    # # # # # # #
+# Name           VCPUS RAM    Total  Disk  Public #
+# uom.mse.1c4g   1     4.5G   30G    30G   No     #
+# uom.mse.2c9g   2     9G     30G    30G   No     #
+# # # # # # # # # # # # # # # # # # # # # # # # # #
+instance_flavor: uom.mse.2c9g
+
+# Security group
+security_groups:
+  - name: ssh
+    description: "Security group for SSH access"
+    protocol: tcp
+    port_range_min: 22
+    port_range_max: 22
+    remote_ip_prefix: 0.0.0.0/0
+  - name: http
+    description: "Security group for HTTP"
+    protocol: tcp
+    port_range_min: 80
+    port_range_max: 80
+    remote_ip_prefix: 0.0.0.0/0
+  - name: couchDB
+    description: "security group for couchdb cluster setup"
+    protocol: tcp
+    port_range_min: 5984
+    port_range_max: 5988
+    remote_ip_prefix: 0.0.0.0/0
+  - name: couchDBCluster1
+    description: "security group for couchdb cluster setup"
+    protocol: tcp
+    port_range_min: 4369
+    port_range_max: 4369
+    remote_ip_prefix: 0.0.0.0/0    
+  - name: couchDBCluster2
+    description: "security group for couchdb cluster setup"
+    protocol: tcp
+    port_range_min: 9099
+    port_range_max: 9201
+    remote_ip_prefix: 0.0.0.0/0   
+  - name: swarm
+    description: "security group for docker swarm"
+    protocol: tcp
+    port_range_min: 2377
+    port_range_max: 2377
+    remote_ip_prefix: 0.0.0.0/0
+  - name: frontend
+    description: "security group for frontend react"
+    protocol: tcp
+    port_range_min: 3000
+    port_range_max: 3000
+    remote_ip_prefix: 0.0.0.0/0
+  - name: netdata
+    description: "visualization"
+    protocol: tcp
+    port_range_min: 19999
+    port_range_max: 19999
+    remote_ip_prefix: 0.0.0.0/0
+  - name: dockerVisualization
+    description: "dockerVisualization"
+    protocol: tcp
+    port_range_min: 9000
+    port_range_max: 9000
+    remote_ip_prefix: 0.0.0.0/0
+  - name: backend
+    description: "backend"
+    protocol: tcp
+    port_range_min: 8080
+    port_range_max: 8080
+    remote_ip_prefix: 0.0.0.0/0
+  - name: redis
+    description: "redis"
+    protocol: tcp
+    port_range_min: 6379
+    port_range_max: 6379
+    remote_ip_prefix: 0.0.0.0/0
