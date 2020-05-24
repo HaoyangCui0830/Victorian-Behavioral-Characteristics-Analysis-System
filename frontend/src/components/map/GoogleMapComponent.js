@@ -134,15 +134,14 @@ class GoogleMapComponent extends Component {
                 }
             })
         }
-
         if (selectedSource === "Alcohol"||"Medium Income"||"Employment"||"Unemployment"||"Smoker") {
             map.data.setStyle((feature) => {
                 let values =  commonData.map(suburb=>suburb.value)
                 let max =Math.max(...values)
                 let min =Math.min(...values)
                 let gap = (max-min)/5
-
                 let target = commonData.filter(suburb => suburb.name === feature.getProperty("name"))
+
                 if (target[0]) {
                     let value = target[0].value
                     let color
@@ -169,6 +168,53 @@ class GoogleMapComponent extends Component {
                     fillColor: Colors.yellow,
                 }
             })
+        }
+
+        if (selectedSource === "Living Region") {
+            map.data.addListener('click', function (e) {
+                let target = commonData.filter(suburb => suburb.name === e.feature.getProperty("name"))
+                let arr = []
+                Object.keys(target[0].value).forEach((key)=>{
+                    arr.push(key);
+                })
+                map.data.setStyle((feature) => {
+                    let sub_target = commonData.filter(suburb => suburb.name === feature.getProperty("name"))
+                    if (target[0] && arr.includes(sub_target[0].name)) {
+                        
+                                // console.log("sub_target",sub_target[0].name)
+                                
+                                let value = target[0].value[sub_target[0].name]
+                                let color
+                                if (value < 10)
+                                    color = Colors.green
+                                if (value < 20 && value >= 10)
+                                    color = Colors.blue
+                                if (value < 30 && value >= 20)
+                                    color = Colors.yellow
+                                if (value < 40 && value >= 30)
+                                    color = Colors.orange
+                                if (value >= 40)
+                                    color = Colors.green
+                                
+                                return {
+                                    strokeColor: '#FFAE3B',
+                                    clickable: true,
+                                    fillColor: color,
+                                    strokeWeight: 1,
+                                    fillOpacity: 0.7,
+                                }
+
+                    }else return {
+                        strokeColor: '#FFAE3B',
+                        strokeWeight: 1,
+                        fillColor: Colors.yellow,
+                    }
+                    })
+                // Object.keys(target[0].value).forEach((key)=>{
+                //     console.log(key, " -> ", target[0].value[key])
+                // })
+            });
+
         }
 
         map.data.addListener('mouseover', function (event) {

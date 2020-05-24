@@ -11,6 +11,8 @@ import {MINCOME} from "../StaticData/aurin/medium_income";
 import {SMOKER} from "../StaticData/aurin/smoker";
 import {UNEMPLOYMENT} from "../StaticData/aurin/unemployment";
 import {EMPLOYMENT} from "../StaticData/aurin/num-of-employed-people";
+import {REGION} from "../StaticData/aurin/livingregion_result";
+
 
 export const AppContext = React.createContext()
 
@@ -81,6 +83,8 @@ class Main extends Component {
                     case "Employment":
                         this.setState({commonData: chartFormatter["common"](EMPLOYMENT.rows), isLoading: false})
                         break;
+                    case "Living Region":
+                        this.setState({commonData: chartFormatter["common"](REGION.rows), isLoading: false})
                     default:
                         this.setState({isLoading:false})
                 }
