@@ -14,11 +14,26 @@ class Map extends Component {
     componentDidMount() {
         this.props.actions.getTime();
     }
+    
+    sum ( obj ) {
+        var sum = 0;
+        for( var el in obj ) {
+          if( obj.hasOwnProperty( el ) ) {
+            sum += parseFloat( obj[el] );
+          }
+        }
+        return sum;
+      }
+          
 
     render() {
         const {data, actions} = this.props;
         const {setWord} = actions;
-        const {timeData, isLoading, sentimentData, attitudeData, followerData, languageData, hotwordData, wordSuburbData, selectedSource,commonData} = data;
+        const {timeData, isLoading, sentimentData, attitudeData, followerData, languageData, hotwordData, wordSuburbData, selectedSource, regionData, commonData} = data;
+        let updatedRegionData;
+        if (regionData){
+            updatedRegionData = regionData.map(suburb => ({name:suburb.name, value:this.sum(suburb.value)}))
+        }
         return (
             <>
                 <GoogleMapComponent sentiment={sentimentData}
@@ -26,6 +41,7 @@ class Map extends Component {
                                     followerData={followerData}
                                     wordSuburbData={wordSuburbData}
                                     commonData={commonData}
+                                    regionData = {regionData}
                                     isLoading={isLoading}
                                     selectedSource={selectedSource}/>
                 <div className="page">
@@ -46,6 +62,8 @@ class Map extends Component {
                             <SimpleBarChart data={hotwordData} selectedSource={selectedSource}
                                             onClick={(word) => setWord(word)}/>}
                             {(!!commonData)&& <SimpleBarChart data={commonData} selectedSource={selectedSource} onClick={()=>{}}/>}
+                            {(!!regionData && selectedSource == "Living Region") &&
+                            <SimpleBarChart data={updatedRegionData} selectedSource={selectedSource} onClick={()=>{}}/>}
                         </Col>
                     </Row>
                 </div>
