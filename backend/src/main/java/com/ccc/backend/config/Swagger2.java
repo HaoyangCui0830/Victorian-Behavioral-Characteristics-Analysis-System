@@ -37,7 +37,7 @@ public class Swagger2 {
                         "wux14@student.unimelb.edu.au"))
                 .description("this is a api doc for ccc assignment 2")
                 .version("0.0.1")   // 文档版本号
-                .termsOfServiceUrl("https://www.imooc.com") // 网站地址
+                .termsOfServiceUrl("172.26.131.6") // 网站地址
                 .build();
     }
 

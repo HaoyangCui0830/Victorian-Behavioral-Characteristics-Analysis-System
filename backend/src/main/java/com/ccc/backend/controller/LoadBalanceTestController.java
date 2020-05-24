@@ -38,6 +38,7 @@ public class LoadBalanceTestController {
             }
             ipAddrStr += ipAddr[i] & 0xFF;
         }
+        System.out.println("/api/test invoked");
         //System.out.println(ipAddrStr);
         return "This response from "+ipAddrStr;
     }
