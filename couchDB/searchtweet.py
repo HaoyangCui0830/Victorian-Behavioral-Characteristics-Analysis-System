@@ -42,32 +42,20 @@ auth.set_access_token("974163114433306624-fSrCQPL7HCM33RxE76V2dvFmsuQ1v5n", "i2e
 
 api = tweepy.API(auth)
 
-# public_tweets = api.home_timeline()
-# for tweet in public_tweets:
-#     print(tweet.text)
-server = pycouchdb.Server("http://admin:123456@172.26.133.110:5984/")
-#print(server.info())
-# try:
-#     db = server.create('ccctest')
-# except Exception as e:
-#     db = server.database("ccctest")
+
+server = pycouchdb.Server("http://admin:123456@172.26.132.72:5984/")
 db = server.database("twitter")
 time.sleep(5)
-# print(db)
+
 result = api.search(geocode = "-37.999250,144.997395,20km",count=100, result_type = 'mixed')
-#print(result)
+
 for item in result:
 	data = item._json
-	#print(data)
-	# print(data)
-	# get suburb
 	suburb = "None"
 	if data["place"] and data['place']['place_type'] == 'neighborhood':
-		#print(data['place']['place_type'])
 		suburb = find_suburb_place(data['place']['name'])
 	elif data['coordinates']:
 		suburb = find_suburb([data["coordinates"]["coordinates"][0], data["coordinates"]["coordinates"][1]])
-		#print(suburb)
 	if data["id_str"] not in db:
 		db.save({
 			"_id": data["id_str"],

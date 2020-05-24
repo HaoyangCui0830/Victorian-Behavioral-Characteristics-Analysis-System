@@ -1,8 +1,108 @@
 # CCCProject2  
 
-to fully deploy couchDB cluster, following these steps
-1. sh run-all-in-one.sh 
-2. ssh into each instance, run: sudo mv /var/lib/dpkg/info/install-info.postinst /var/lib/dpkg/info/install-info.postinst.bad
-	(this should be put inside ansible later)
-3. sh set_environment.sh
-4. sh couchdb_cluster.sh
+## Team Members:
+Haoyang Cui - haoyangc@student.unimelb.edu.au
+
+## Videos and Documentation
+Youtube link:
+
+Slides:
+
+## System Architecture
+
+
+## Ansible Playbook Deployment
+
+### openstack key
+
+```
+MTFjM2E4MWE3Mjk3NGVi
+```
+
+### step 1 create VMs
+```
+./create_VMs.sh
+```
+Sub-steps inside:
+* create volumes
+* set security-group
+* create instances
+
+After created, we can get four instances:
+
+![instacnes](documents/images/instances.png)
+
+
+### step 2 set VMs environment
+```
+./set_environment.sh
+```
+Sub-steps inside:
+* set-proxy
+* mount-volumes
+* install-docker
+
+### step 3 cluster CouchDB
+```
+./couchdb_cluster.sh
+```
+Three nodes will be configured as a couchDB cluster, the membership could be checked by executing the commend:
+```
+curl admin:123456@172.26.132.72:5984/_membership
+```
+and the result will look like below:
+
+![DBcluster](documents/images/DBcluster.png)
+
+Instance2, instance3 and instance4 have be successfully clustered.
+
+### step 4 Deploy all applications and components
+```
+./DeployAllApplications.sh
+```
+SUb-steps includes:
+* deploy netData component for server status monitoring
+* Set Map Reduce and Data harvest
+* Set Redis cluster as Middleware
+* Deploy springboot backend
+* Deploy frontend together with nginx configuring
+
+After this step, all required components should be successfully deployed, they may look like below:
+
+couchDB:
+![DB](documents/images/couchDB.png)
+
+web:
+![web](documents/images/web.png)
+
+Server Status Monitor:
+![netData](documents/images/netData.png)
+
+
+## All Instacnes Arrangement
+
+Instance1: 172.26.131.6
+* frontend
+* nginx
+* Server Status Monitor
+* grafana
+
+Instacne2: 172.26.132.72
+* CouchDB Cluster (masternode)
+* Regis Cluster
+* Data Harvester
+* Server Status Monitor
+
+Instance3: 172.26.130.221
+* Backend1
+* CouchDB Cluster (subnode1)
+* Regis Cluster
+* Data Harvester
+* Server Status Monitor
+
+Instance4: 172.26.133.57
+* Backend2
+* CouchDB Cluster (subnode2)
+* Regis Cluster
+* Data Harvester
+* Server Status Monitor
