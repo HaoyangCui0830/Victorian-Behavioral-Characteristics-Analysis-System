@@ -26,6 +26,7 @@ class Main extends Component {
             attitudeData: "",
             languageData: "",
             hotwordData: "",
+            regionData: "",
             selectedSource: "",
             selectedWord: "",
             wordSuburbData: "",
@@ -84,7 +85,7 @@ class Main extends Component {
                         this.setState({commonData: chartFormatter["common"](EMPLOYMENT.rows), isLoading: false})
                         break;
                     case "Living Region":
-                        this.setState({commonData: chartFormatter["common"](REGION.rows), isLoading: false})
+                        this.setState({regionData: chartFormatter["region"](REGION.rows), isLoading: false})
                     default:
                         this.setState({isLoading:false})
                 }
