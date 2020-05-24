@@ -26,6 +26,34 @@ class Header extends Component {
         const {data, actions} = this.props;
         const {selectedSource,isLoading} = data;
         const {onSelect}=actions;
+        let showDropdown ;
+
+        if (window.location.pathname == "/map"){
+            showDropdown = <Dropdown isOpen={idDropdownOpen} toggle={this.toggleDropdown}>
+            <DropdownToggle caret>
+            {selectedSource || "Data Source"}
+            </DropdownToggle>
+            <DropdownMenu right>
+            <DropdownItem header>Aurin</DropdownItem>
+            <DropdownItem onClick={onSelect}> Alcohol</DropdownItem>
+            <DropdownItem onClick={onSelect}> Living Region</DropdownItem>
+            <DropdownItem onClick={onSelect}> Medium Income</DropdownItem>
+            <DropdownItem onClick={onSelect}> Employment</DropdownItem>
+            <DropdownItem onClick={onSelect}> Unemployment</DropdownItem>
+            <DropdownItem onClick={onSelect}> Smoker</DropdownItem>
+            <DropdownItem divider/>
+            <DropdownItem header>Twitter</DropdownItem>
+            <DropdownItem onClick={onSelect}> Sentiment</DropdownItem>
+            <DropdownItem onClick={onSelect}> Follower</DropdownItem>
+            <DropdownItem onClick={onSelect}> Language</DropdownItem>
+            <DropdownItem onClick={onSelect}> Hot Words</DropdownItem>
+        </DropdownMenu>
+        </Dropdown>
+        }
+        else{
+            showDropdown = <p></p>
+        }
+    
         return (
             <Navbar dark expand="md">
                 <div className="container">
@@ -47,26 +75,7 @@ class Header extends Component {
                             </NavItem>
                         </Nav>
                     </Collapse>
-                    <Dropdown isOpen={idDropdownOpen} toggle={this.toggleDropdown}>
-                        <DropdownToggle caret>
-                            {selectedSource || "Data Source"}
-                        </DropdownToggle>
-                        <DropdownMenu right>
-                            <DropdownItem header>Aurin</DropdownItem>
-                            <DropdownItem onClick={onSelect}> Alcohol</DropdownItem>
-                            <DropdownItem onClick={onSelect}> Living Region</DropdownItem>
-                            <DropdownItem onClick={onSelect}> Medium Income</DropdownItem>
-                            <DropdownItem onClick={onSelect}> Employment</DropdownItem>
-                            <DropdownItem onClick={onSelect}> Unemployment</DropdownItem>
-                            <DropdownItem onClick={onSelect}> Smoker</DropdownItem>
-                            <DropdownItem divider/>
-                            <DropdownItem header>Twitter</DropdownItem>
-                            <DropdownItem onClick={onSelect}> Sentiment</DropdownItem>
-                            <DropdownItem onClick={onSelect}> Follower</DropdownItem>
-                            <DropdownItem onClick={onSelect}> Language</DropdownItem>
-                            <DropdownItem onClick={onSelect}> Hot Words</DropdownItem>
-                        </DropdownMenu>
-                    </Dropdown>
+                    {showDropdown}
                     {isLoading&&<Spinner color="primary"/>}
                 </div>
             </Navbar>
