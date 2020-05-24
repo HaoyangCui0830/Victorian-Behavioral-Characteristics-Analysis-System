@@ -10,6 +10,26 @@ Slides:
 
 ## System Architecture
 
+![architecture](documents/images/architecture.png)
+
+### Explanation:
+
+### DB
+* **Data Harvest**:
+Continuously collect data from Twitter, via tweepy's Search API and Stream API
+* **Data Processing**:
+Process data collected and store into couchDB, NLP library is used here to analysis sentiment from twitter text
+* **CouchDB**:
+CouchDB cluster is built upon three different instances, multiple MapReduces are provided for data query
+
+
+### Middleware
+
+### Backend
+
+### Frontend
+
+
 
 ## Ansible Playbook Deployment
 
