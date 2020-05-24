@@ -68,6 +68,7 @@ class GoogleMapComponent extends Component {
                     color = Colors.orange
                 if (value >= 0.2)
                     color = Colors.red
+                
                 return {
                     strokeColor: '#FFAE3B',
                     clickable: true,
@@ -174,15 +175,34 @@ class GoogleMapComponent extends Component {
             map.data.addListener('click', function (e) {
                 let target = commonData.filter(suburb => suburb.name === e.feature.getProperty("name"))
                 let arr = []
+                let output = []
                 Object.keys(target[0].value).forEach((key)=>{
                     arr.push(key);
+                    output.push(
+                    <tr>
+                        <td>{key}</td>
+                        <td>{target[0].value[key]} </td>
+                    </tr>);
                 })
+                const myelement = (
+                    <table>
+                      <tr>
+                        <th>{target[0].name}</th>
+                        <th></th>
+                      </tr>
+                      {output}
+                    </table>
+                  );
+                let div = document.createElement('div')
+                ReactDOM.render(myelement, div)
+                infoWindow = new window.google.maps.InfoWindow({
+                    content: div,
+                    position: e.latLng
+                });
+                infoWindow.open(map)   
                 map.data.setStyle((feature) => {
                     let sub_target = commonData.filter(suburb => suburb.name === feature.getProperty("name"))
                     if (target[0] && arr.includes(sub_target[0].name)) {
-                        
-                                // console.log("sub_target",sub_target[0].name)
-                                
                                 let value = target[0].value[sub_target[0].name]
                                 let color
                                 if (value < 10)
@@ -190,12 +210,10 @@ class GoogleMapComponent extends Component {
                                 if (value < 20 && value >= 10)
                                     color = Colors.blue
                                 if (value < 30 && value >= 20)
-                                    color = Colors.yellow
-                                if (value < 40 && value >= 30)
                                     color = Colors.orange
-                                if (value >= 40)
-                                    color = Colors.green
-                                
+                                if (value >= 30)
+                                    color = Colors.red   
+                                                          
                                 return {
                                     strokeColor: '#FFAE3B',
                                     clickable: true,
