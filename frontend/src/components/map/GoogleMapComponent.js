@@ -44,7 +44,7 @@ class GoogleMapComponent extends Component {
     }
 
     createDataLayer = () => {
-        const {suburbDetail, sentiment, followerData, wordSuburbData, selectedSource, commonData} = this.props
+        const {suburbDetail, sentiment, followerData, wordSuburbData, selectedSource, commonData, regionData} = this.props
         const {map} = this.state
 
         map.data.forEach((feature) => {
@@ -135,7 +135,67 @@ class GoogleMapComponent extends Component {
                 }
             })
         }
-        if (selectedSource === "Alcohol"||"Medium Income"||"Employment"||"Unemployment"||"Smoker") {
+        if (selectedSource === "Living Region") {
+            map.data.addListener('click', function (e) {
+                let target = regionData.filter(suburb => suburb.name === e.feature.getProperty("name"))
+                let arr = []
+                let output = []
+                Object.keys(target[0].value).forEach((key)=>{
+                    arr.push(key);
+                    output.push(
+                    <tr>
+                        <td>{key}</td>
+                        <td>{target[0].value[key]} </td>
+                    </tr>);
+                })
+                const myelement = (
+                    <table>
+                      <tr>
+                        <th>{target[0].name}</th>
+                        <th></th>
+                      </tr>
+                      {output}
+                    </table>
+                  );
+                let div = document.createElement('div')
+                ReactDOM.render(myelement, div)
+                infoWindow = new window.google.maps.InfoWindow({
+                    content: div,
+                    position: e.latLng
+                });
+                infoWindow.open(map)   
+                map.data.setStyle((feature) => {
+                    let sub_target = regionData.filter(suburb => suburb.name === feature.getProperty("name"))
+                    if (target[0] && arr.includes(sub_target[0].name)) {
+                                let value = target[0].value[sub_target[0].name]
+                                let color
+                                if (value < 10)
+                                    color = Colors.green
+                                if (value < 20 && value >= 10)
+                                    color = Colors.blue
+                                if (value < 30 && value >= 20)
+                                    color = Colors.orange
+                                if (value >= 30)
+                                    color = Colors.red   
+                                                          
+                                return {
+                                    strokeColor: '#FFAE3B',
+                                    clickable: true,
+                                    fillColor: color,
+                                    strokeWeight: 1,
+                                    fillOpacity: 0.7,
+                                }
+
+                    }else return {
+                        strokeColor: '#FFAE3B',
+                        strokeWeight: 1,
+                        fillColor: Colors.yellow,
+                    }
+                    })
+            });
+
+        }
+        if (selectedSource === "Alcohol"||selectedSource === "Medium Income"||selectedSource === "Employment"||selectedSource === "Unemployment"||selectedSource === "Smoker") {
             map.data.setStyle((feature) => {
                 let values =  commonData.map(suburb=>suburb.value)
                 let max =Math.max(...values)
@@ -171,69 +231,6 @@ class GoogleMapComponent extends Component {
             })
         }
 
-        if (selectedSource === "Living Region") {
-            map.data.addListener('click', function (e) {
-                let target = commonData.filter(suburb => suburb.name === e.feature.getProperty("name"))
-                let arr = []
-                let output = []
-                Object.keys(target[0].value).forEach((key)=>{
-                    arr.push(key);
-                    output.push(
-                    <tr>
-                        <td>{key}</td>
-                        <td>{target[0].value[key]} </td>
-                    </tr>);
-                })
-                const myelement = (
-                    <table>
-                      <tr>
-                        <th>{target[0].name}</th>
-                        <th></th>
-                      </tr>
-                      {output}
-                    </table>
-                  );
-                let div = document.createElement('div')
-                ReactDOM.render(myelement, div)
-                infoWindow = new window.google.maps.InfoWindow({
-                    content: div,
-                    position: e.latLng
-                });
-                infoWindow.open(map)   
-                map.data.setStyle((feature) => {
-                    let sub_target = commonData.filter(suburb => suburb.name === feature.getProperty("name"))
-                    if (target[0] && arr.includes(sub_target[0].name)) {
-                                let value = target[0].value[sub_target[0].name]
-                                let color
-                                if (value < 10)
-                                    color = Colors.green
-                                if (value < 20 && value >= 10)
-                                    color = Colors.blue
-                                if (value < 30 && value >= 20)
-                                    color = Colors.orange
-                                if (value >= 30)
-                                    color = Colors.red   
-                                                          
-                                return {
-                                    strokeColor: '#FFAE3B',
-                                    clickable: true,
-                                    fillColor: color,
-                                    strokeWeight: 1,
-                                    fillOpacity: 0.7,
-                                }
-
-                    }else return {
-                        strokeColor: '#FFAE3B',
-                        strokeWeight: 1,
-                        fillColor: Colors.yellow,
-                    }
-                    })
-                // Object.keys(target[0].value).forEach((key)=>{
-                //     console.log(key, " -> ", target[0].value[key])
-                // })
-            });
-
-        }
 
         map.data.addListener('mouseover', function (event) {
             map.data.revertStyle();
@@ -273,7 +270,7 @@ class GoogleMapComponent extends Component {
     }
 
     render() {
-        if (this.props.suburbDetail || this.props.sentiment || this.props.followerData || this.props.wordSuburbData || this.props.commonData) {
+        if (this.props.suburbDetail || this.props.sentiment || this.props.followerData || this.props.wordSuburbData || this.props.regionData || this.props.commonData) {
             this.createDataLayer()
         }
         return (
