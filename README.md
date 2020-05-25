@@ -6,7 +6,7 @@ Haoyang Cui - haoyangc@student.unimelb.edu.au
 ## Videos and Documentation
 Youtube link:
 
-Slides:
+Slides:![slides](documents/slides)
 
 ## System Architecture
 
