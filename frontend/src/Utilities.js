@@ -1,4 +1,4 @@
-export const chartFormatter = {
+export const dataFormatter = {
     time: data => {
         return data.map(x => ({
                 name: x.hour,
@@ -52,6 +52,7 @@ export const chartFormatter = {
 }
 
 export const Colors = {
+    grey:'#454545',
     blue:'#69d2ff',
     red: '#ff311d',
     orange: '#fd8a33',

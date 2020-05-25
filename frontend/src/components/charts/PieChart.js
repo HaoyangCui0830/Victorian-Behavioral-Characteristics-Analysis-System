@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { PieChart, Pie ,Sector} from 'recharts';
+import { PieChart, Pie ,Sector,ResponsiveContainer} from 'recharts';
 
 const renderActiveShape = (props) => {
     const RADIAN = Math.PI / 180;
@@ -63,23 +63,25 @@ export default class SimplePieChart extends PureComponent {
     render() {
         const {data} = this.props
         return (
-            <PieChart width={400} height={400}>
-                <Pie
-                    activeIndex={this.state.activeIndex}
-                    activeShape={renderActiveShape}
-                    animationBegin={0}
-                    animationDuration={1000}
-                    data={data}
-                    cx={200}
-                    cy={200}
-                    innerRadius={60}
-                    outerRadius={80}
-                    fill="#283d6a"
-                    outerFill="#FFBB28"
-                    dataKey="value"
-                    onMouseEnter={this.onPieEnter}
-                />
-            </PieChart>
+            <ResponsiveContainer width={400} height={400}>
+                <PieChart >
+                    <Pie
+                        activeIndex={this.state.activeIndex}
+                        activeShape={renderActiveShape}
+                        animationBegin={0}
+                        animationDuration={1000}
+                        data={data}
+                        cx={200}
+                        cy={200}
+                        innerRadius={60}
+                        outerRadius={80}
+                        fill="#283d6a"
+                        outerFill="#FFBB28"
+                        dataKey="value"
+                        onMouseEnter={this.onPieEnter}
+                    />
+                </PieChart>
+            </ResponsiveContainer>
         );
     }
 }
