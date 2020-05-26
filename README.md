@@ -12,9 +12,15 @@ ZIYUE WANG - ziyue2@student.unimelb.edu.au
 Mayan Agarwal - mayana@student.unimelb.edu.au
 
 ## Videos and Documentation
-Youtube link:
+**Youtube link**:
 
-Slides:[slides](documents/slides)
+System Architecture Design: https://m.youtube.com/watch?v=utQ9gJSVDyY&feature=youtu.be
+
+Ansible: https://m.youtube.com/watch?v=9sFTue2hmU8&feature=youtu.be
+
+Scenarios Demo: https://m.youtube.com/watch?v=8ljMIrDm5lw&feature=youtu.be
+
+**Slides**: [slides](documents/slides)
 
 ## System Architecture
 
