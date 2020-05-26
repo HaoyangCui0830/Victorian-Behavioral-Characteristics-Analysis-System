@@ -7,7 +7,7 @@ import java.util.List;
 public interface NoEnglishMapper {
     /**
      *
-     * @return
+     * @return all no_english data
      * */
     public List<NoEnglish> getAll();
 }

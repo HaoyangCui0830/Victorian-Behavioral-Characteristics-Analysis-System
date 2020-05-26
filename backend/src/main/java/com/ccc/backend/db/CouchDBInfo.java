@@ -3,6 +3,9 @@ package com.ccc.backend.db;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+/**
+ * @Description couchdb info
+ */
 @Component
 public class CouchDBInfo {
 

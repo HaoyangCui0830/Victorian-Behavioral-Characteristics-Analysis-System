@@ -6,10 +6,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.List;
 
-
+/**
+ * @Description Json Util Class for transfer betweent json string and object
+*/
 public class JsonUtils {
 
-    // 定义jackson对象
     private static final ObjectMapper MAPPER = new ObjectMapper();
 
     /**

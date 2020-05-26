@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface SentimentMapper {
     /**
-     * @return
+     * @return all sentiment data
      **/
     public List<Sentiment> getAll();
 }

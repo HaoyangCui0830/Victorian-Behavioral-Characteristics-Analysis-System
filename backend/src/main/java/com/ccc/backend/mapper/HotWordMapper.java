@@ -7,8 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @description: TODO
- * @author: Xin(Shawn) Wu
+ * @description: all hotword data
  */
 public interface HotWordMapper {
     public List<HotWord> getAll();

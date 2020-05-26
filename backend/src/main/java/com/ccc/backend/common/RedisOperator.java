@@ -14,7 +14,7 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @Description: Redis tool
+ * @Description: Redis tool class for operating redis
  */
 @Component
 public class RedisOperator {
@@ -24,8 +24,6 @@ public class RedisOperator {
 
     @Autowired
     private StringRedisTemplate redisTemplate;
-
-    // Key（键），简单的key-value操作
 
     /**
      * @param key
@@ -103,9 +101,6 @@ public class RedisOperator {
      */
     public List<Object> batchGet(List<String> keys) {
 
-//		nginx -> keepalive
-//		redis -> pipeline
-
         List<Object> result = redisTemplate.executePipelined(new RedisCallback<String>() {
             @Override
             public String doInRedis(RedisConnection connection) throws DataAccessException {
@@ -121,8 +116,6 @@ public class RedisOperator {
         return result;
     }
 
-
-    // Hash（哈希表）
 
     /**
      * @param key
@@ -157,8 +150,6 @@ public class RedisOperator {
     public Map<Object, Object> hgetall(String key) {
         return redisTemplate.opsForHash().entries(key);
     }
-
-    // List（列表）
 
     /**
      * @param key

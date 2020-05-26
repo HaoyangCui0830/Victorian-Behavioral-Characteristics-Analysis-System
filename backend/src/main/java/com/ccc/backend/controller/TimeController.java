@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * @Description time controller to process /api/time request
+ */
 @RestController
 @RequestMapping("/api")
 public class TimeController {
@@ -26,7 +29,9 @@ public class TimeController {
         // check redis first, if data in redis, use the data in redis else query couchdb and store into redis
         String resultRedis = redisOperator.get("time");
         if (resultRedis == null || resultRedis.equals("")) {
+            // if data not in redis, query couchdb
             List<Time> resultCouchdb = timeMapper.getAll();
+            // store data in case next time query
             redisOperator.set("time", JsonUtils.objectToJson(resultCouchdb));
             return resultCouchdb;
         } else {

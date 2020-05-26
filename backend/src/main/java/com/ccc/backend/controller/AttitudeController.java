@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-
+/**
+ * @Description attitude controller to process /api/attitude request
+*/
 @RestController
 @RequestMapping("/api")
 public class AttitudeController {
@@ -26,7 +28,9 @@ public class AttitudeController {
         // check redis first, if data in redis, use the data in redis else query couchdb and store into redis
         String resultRedis = redisOperator.get("attitude");
         if (resultRedis == null || resultRedis.equals("")) {
+            // if data not in redis, query couchdb
             List<Attitude> resultCouchdb = attitudeMapper.getAll();
+            // store data in case next time query
             redisOperator.set("attitude", JsonUtils.objectToJson(resultCouchdb));
             return resultCouchdb;
         } else {

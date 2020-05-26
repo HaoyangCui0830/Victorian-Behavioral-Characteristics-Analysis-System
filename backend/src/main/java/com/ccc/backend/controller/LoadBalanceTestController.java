@@ -8,7 +8,7 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 
 /**
- * @description: TODO
+ * @description: test load balance
  * @author: Xin(Shawn) Wu
  */
 
