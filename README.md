@@ -2,12 +2,25 @@
 
 ## Team Members:
 Haoyang Cui - haoyangc@student.unimelb.edu.au
+
 Xin Wu - wux14@student.unimelb.edu.au
 
-## Videos and Documentation
-Youtube link:
+Dongming Li - dongming@student.unimelb.edu.au
 
-Slides:![slides](documents/slides)
+ZIYUE WANG - ziyue2@student.unimelb.edu.au
+
+Mayan Agarwal - mayana@student.unimelb.edu.au
+
+## Videos and Documentation
+**Youtube link**:
+
+System Architecture Design: https://m.youtube.com/watch?v=utQ9gJSVDyY&feature=youtu.be
+
+Ansible: https://m.youtube.com/watch?v=9sFTue2hmU8&feature=youtu.be
+
+Scenarios Demo: https://m.youtube.com/watch?v=8ljMIrDm5lw&feature=youtu.be
+
+**Slides**: [slides](documents/slides)
 
 ## System Architecture
 
@@ -15,20 +28,29 @@ Slides:![slides](documents/slides)
 
 ### Explanation:
 
-### DB
-* **Data Harvest**:
-Continuously collect data from Twitter, via tweepy's Search API and Stream API
-* **Data Processing**:
-Process data collected and store into couchDB, NLP library is used here to analysis sentiment from twitter text
-* **CouchDB**:
-CouchDB cluster is built upon three different instances, multiple MapReduces are provided for data query
+### Data Harvest&Processing
+Data harvester collects data from Twitter API(both Search API and Stream API) and processor will further complete sentiment analysing using NLP library and Geo info recognising.
+
+### CouchDB Cluster
+Handled data will be written into CouchDB cluster with MapReduce views, backend could request relevant data from different views. We clustered three different instances as one couchDB cluster. In our test, the DB read/write performances are improved a lot through clustering.
 
 
-### Middleware
+### Middleware Redis Cluster
+Lots of query requests are repeated and CouchDB responds to the same data, which let CouchDB do the same query and waste computing resources. Redis is an in-memory database and the speed is overwhelming. Middleware redis cluster can help couchDB Reduce the burden and improve response speed.
+
 
 ### Backend
+Nginx will assign requests for a specific backend by loading balance strategy. When a backend gets a request, it will validate the request first and process the request if it is legal, abandon it if it is illegal. Backend query redis first and if the target data in redis then quickly response to nginx and nginx sends the data to the browser. If target data is not in redis, then query couchDB and response the data besides, store the data into redis in case next time query.
 
-### Frontend
+
+### Frontend & Nginx:
+We use Nginx as a HTTP server and store those frontend static resources to provide frontend functionalities. The Nginx server listens to port 80 to handle requests from the browser(client). Nginx will pass all backend requests starting with /api/ to one of those two upstream backend servers by the configuration of proxy_pass and use Round Robin load balance policy to assign which backend processes the request.
+We use React to build up our frontend as a single page application(SPA), so to provide routing between components, we use BrowserRouter to parse the url. And to avoid the hassle caused by unnecessary pass state and data through intermediary components, we use React Context to provide a central and global store.
+
+### Instance Status Monitor:
+We deployed netData for monitoring instance status on all instances, including usage of CPUs, Disk and network. This could give us clear views about any issue on Server, and provide an efficient visualisation of workload in our system
+
+
 
 
 
