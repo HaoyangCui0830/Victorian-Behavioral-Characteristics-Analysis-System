@@ -1,3 +1,9 @@
+# Team 6
+# Haoyang Cui - Melbourne - 886794
+# Xin Wu - Melbourne - 947753
+# Dongming Li - Melbourne - 1002971
+# Ziyue Wang - Melbourne - 1014037
+# Mayan Agarwal - Melbourne - 973957
 import tweepy
 import json
 import pycouchdb
