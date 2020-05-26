@@ -33,7 +33,6 @@ MTFjM2E4MWE3Mjk3NGVi
 ```
 ./DeployAllApplications.sh
 ```
-SUb-steps includes:
 ### deploy netData component for server status monitoring
 ### Set Map Reduce and Data harvest
 ### Set Redis cluster as Middleware
