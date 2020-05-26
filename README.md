@@ -2,6 +2,7 @@
 
 ## Team Members:
 Haoyang Cui - haoyangc@student.unimelb.edu.au
+Xin Wu - wux14@student.unimelb.edu.au
 
 ## Videos and Documentation
 Youtube link:
@@ -109,20 +110,20 @@ Instance1: 172.26.131.6
 
 Instacne2: 172.26.132.72
 * CouchDB Cluster (masternode)
-* Regis Cluster
+* Redis
 * Data Harvester
 * Server Status Monitor
 
 Instance3: 172.26.130.221
 * Backend1
 * CouchDB Cluster (subnode1)
-* Regis Cluster
+* Redis
 * Data Harvester
 * Server Status Monitor
 
 Instance4: 172.26.133.57
 * Backend2
 * CouchDB Cluster (subnode2)
-* Regis Cluster
+* Redis
 * Data Harvester
 * Server Status Monitor
