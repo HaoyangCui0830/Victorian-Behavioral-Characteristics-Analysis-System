@@ -28,3 +28,14 @@ MTFjM2E4MWE3Mjk3NGVi
 ```
 ./couchdb_cluster.sh
 ```
+
+### step 4 Deploy all applications and components
+```
+./DeployAllApplications.sh
+```
+SUb-steps includes:
+### deploy netData component for server status monitoring
+### Set Map Reduce and Data harvest
+### Set Redis cluster as Middleware
+### Deploy springboot backend
+### Deploy frontend together with nginx configuring
