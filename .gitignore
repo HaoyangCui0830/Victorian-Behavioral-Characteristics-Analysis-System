@@ -2,3 +2,4 @@ backend/node_modules
 backend/target
 .idea
 .DS_Store
+backend/src/test/
