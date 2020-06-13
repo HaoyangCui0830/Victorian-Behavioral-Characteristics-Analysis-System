@@ -1,5 +1,5 @@
 #!/bin/bash
-git clone https://HaoyangCui0830:123456github@github.com/HaoyangCui0830/CCCProject2.git
+git clone https://github.com/HaoyangCui0830/CCCProject2.git
 cd CCCProject2
 cd couchDB
 curl -XPUT "http://admin:123456@172.26.132.72:5984/twitter"
