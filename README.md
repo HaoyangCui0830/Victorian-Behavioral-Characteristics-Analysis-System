@@ -1,6 +1,6 @@
-# CCCProject2  
+# An analysis system of People's Behavior Characteristics in Victoria
 
-## Team 6
+The system collected more than 250,000 Victorian-based tweets data and extracted people's behavior characteristics. The time range of Tweet data is from March 2020 to May 2020. The analysis results can be used to illustrate the impact of covid19 on people in Victoria in terms of the range of life circle, mood, topics concerned and so on.
 
 ## Team Members:
 Haoyang Cui - haoyangc@student.unimelb.edu.au
@@ -14,7 +14,7 @@ ZIYUE WANG - ziyue2@student.unimelb.edu.au
 Mayan Agarwal - mayana@student.unimelb.edu.au
 
 ## Videos and Documentation
-**Youtube link**:
+**Video Introduction**:
 
 System Architecture Design: https://m.youtube.com/watch?v=utQ9gJSVDyY&feature=youtu.be
 
